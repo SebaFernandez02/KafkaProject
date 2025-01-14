@@ -7,6 +7,8 @@ public class UserKeyMapper implements Mapper<UserKey, UserDto>{
 
     @Override
     public UserKey dtoToEntity(UserDto dto) {
-        return UserKey.newBuilder().setId(dto.getId().toString()).build();
+        return UserKey.newBuilder()
+                .setId(dto.getId().toString())
+                .build();
     }
 }

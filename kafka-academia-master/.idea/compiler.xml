@@ -6,17 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="consultador-clases" />
-        <module name="enviador-alumnos" />
         <module name="suscripcionesCRUD" />
-        <module name="agrupador-profesores" />
-        <module name="agrupador-alumnos" />
-        <module name="asignador-profesores" />
-        <module name="enviador-profesores" />
-        <module name="usuariosCRUD" />
-        <module name="gestor-clases" />
+        <module name="usuarios-crud" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="agrupador-alumnos" target="11" />
+      <module name="agrupador-profesores" target="11" />
+      <module name="asignador-profesores" target="11" />
+      <module name="consultador-clases" target="11" />
+      <module name="enviador-alumnos" target="11" />
+      <module name="enviador-profesores" target="11" />
+      <module name="gestor-clases" target="11" />
+      <module name="kafka-LowLevelProducer" target="11" />
+      <module name="usuariosCRUD" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -27,7 +31,9 @@
       <module name="enviador-alumnos" options="-parameters" />
       <module name="enviador-profesores" options="-parameters" />
       <module name="gestor-clases" options="-parameters" />
+      <module name="kafka-LowLevelProducer" options="-parameters" />
       <module name="suscripcionesCRUD" options="-parameters" />
+      <module name="usuarios-crud" options="-parameters" />
       <module name="usuariosCRUD" options="-parameters" />
     </option>
   </component>

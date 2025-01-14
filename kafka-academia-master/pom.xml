@@ -143,13 +143,6 @@
 
 
 	<modules>
-		<module>enviador-profesores</module>
-		<module>enviador-alumnos</module>
-		<module>asignador-profesores</module>
-		<module>agrupador-profesores</module>
-		<module>agrupador-alumnos</module>
-		<module>gestor-clases</module>
-		<module>consultador-clases</module>
 		<module>usuariosCRUD</module>
 		<module>suscripcionesCRUD</module>
 	</modules>

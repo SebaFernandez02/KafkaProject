@@ -1,23 +1,16 @@
 server:
-  port: 8091
+  port: 8101
 
 spring:
   application:
     name: suscripciones-crud
-  datasource:
-    enabled: false
-  jpa:
-    hibernate:
-      ddl-auto: none
-    enabled: false
   kafka:
-    bootstrap-servers: ${kafka:localhost:29092}
+    bootstrap-servers: ${kafka:localhost}:29092
     producer:
       properties:
         key.serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
         value.serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
         schema.registry.url: http://${schema-registry:localhost}:8081
 
-
 environment:
-  suscription-topic: suscriptions
+  user-topic: users

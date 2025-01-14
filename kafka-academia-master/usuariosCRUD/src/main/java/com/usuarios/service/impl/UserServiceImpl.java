@@ -6,9 +6,11 @@ import com.usuarios.dto.UserDto;
 import com.usuarios.service.UserService;
 import com.usuarios.service.mapper.UserKeyMapper;
 import com.usuarios.service.mapper.UserValueMapper;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 

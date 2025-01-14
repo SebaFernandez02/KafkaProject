@@ -1,22 +1,16 @@
 server:
-  port: 8090
+  port: 8100
 
 spring:
   application:
     name: usuarios-crud
-  datasource:
-    enabled: false
-  jpa:
-    hibernate:
-      ddl-auto: none
-    enabled: false
   kafka:
-    bootstrap-servers: ${kafka:localhost:29092}
+    bootstrap-servers: localhost:9092
     producer:
       properties:
         key.serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
         value.serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
-        schema.registry.url: http://${schema-registry:localhost}:8081
+        schema.registry.url: http://localhost:8081
 
 
 environment:

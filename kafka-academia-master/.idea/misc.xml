@@ -7,6 +7,17 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/agrupador-alumnos/pom.xml" />
+        <option value="$PROJECT_DIR$/agrupador-profesores/pom.xml" />
+        <option value="$PROJECT_DIR$/asignador-profesores/pom.xml" />
+        <option value="$PROJECT_DIR$/consultador-clases/pom.xml" />
+        <option value="$PROJECT_DIR$/enviador-alumnos/pom.xml" />
+        <option value="$PROJECT_DIR$/enviador-profesores/pom.xml" />
+        <option value="$PROJECT_DIR$/gestor-clases/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="corretto-11" project-jdk-type="JavaSDK" />
 </project>
