@@ -1,0 +1,32 @@
+{
+  "type": "record",
+  "namespace": "com.hiberus.cursos.agrupadorprofesores.avro",
+  "name": "ProfesoresPorAsignaturaYNivelValue",
+  "fields": [
+    {
+      "name": "profesores",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "namespace": "com.hiberus.cursos.agrupadorprofesores.avro",
+          "name": "Profesor",
+          "fields": [
+            {
+              "name": "dni",
+              "type": "string"
+            },
+            {
+              "name": "nombre",
+              "type": "string"
+            },
+            {
+              "name": "apellidos",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

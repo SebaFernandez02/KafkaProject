@@ -1,0 +1,23 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: usuarios-crud
+  datasource:
+    enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: none
+    enabled: false
+  kafka:
+    bootstrap-servers: ${kafka:localhost:29092}
+    producer:
+      properties:
+        key.serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
+        value.serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
+        schema.registry.url: http://${schema-registry:localhost}:8081
+
+
+environment:
+  user-topic: users

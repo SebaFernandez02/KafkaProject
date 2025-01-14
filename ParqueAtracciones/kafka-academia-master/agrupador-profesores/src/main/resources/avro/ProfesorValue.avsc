@@ -1,0 +1,52 @@
+{
+  "type": "record",
+  "namespace": "com.hiberus.cursos.asignadorprofesores.avro",
+  "name": "ProfesorAsignadoValue",
+  "fields": [
+    {
+      "name": "dni",
+      "type": "string"
+    },
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "apellidos",
+      "type": "string"
+    },
+    {
+      "name": "direccion",
+      "type": "string"
+    },
+    {
+      "name": "movil",
+      "type": "int"
+    },
+    {
+      "name": "asignatura",
+      "type": {
+        "type": "enum",
+        "name": "Asignatura",
+        "namespace": "com.hiberus.cursos.gestorclases.avro",
+        "symbols": [
+          "MATEMATICAS",
+          "LENGUA",
+          "INGLES"
+        ]
+      }
+    },
+    {
+      "name": "nivel",
+      "type": {
+        "type": "enum",
+        "name": "Nivel",
+        "namespace": "com.hiberus.cursos.gestorclases.avro",
+        "symbols": [
+          "PRIMARIA",
+          "SECUNDARIA"
+        ]
+      }
+    }
+  ]
+}

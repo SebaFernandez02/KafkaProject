@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/agrupador-alumnos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agrupador-alumnos/target/generated-sources/avro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agrupador-profesores/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agrupador-profesores/target/generated-sources/avro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asignador-profesores/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asignador-profesores/target/generated-sources/avro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consultador-clases/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consultador-clases/target/generated-sources/avro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/enviador-alumnos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/enviador-alumnos/target/generated-sources/avro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/enviador-profesores/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/enviador-profesores/target/generated-sources/avro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gestor-clases/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gestor-clases/target/generated-sources/avro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/suscripcionesCRUD/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/usuariosCRUD/src/main/java" charset="UTF-8" />
+  </component>
+</project>

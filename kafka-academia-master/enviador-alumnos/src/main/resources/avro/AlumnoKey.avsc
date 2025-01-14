@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "namespace": "com.hiberus.cursos.enviadoralumnos.avro",
+  "name": "AlumnoKey",
+  "fields": [
+    {
+      "name": "identificador",
+      "type": "string"
+    }
+  ]
+}

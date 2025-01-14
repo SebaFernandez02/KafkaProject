@@ -1,0 +1,57 @@
+{
+  "type": "record",
+  "namespace": "com.hiberus.cursos.gestorclases.avro",
+  "name": "ClaseValue",
+  "fields": [
+    {
+      "name": "profesores",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "namespace": "com.hiberus.cursos.agrupadorprofesores.avro",
+          "name": "Profesor",
+          "fields": [
+            {
+              "name": "dni",
+              "type": "string"
+            },
+            {
+              "name": "nombre",
+              "type": "string"
+            },
+            {
+              "name": "apellidos",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "alumnos",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "namespace": "com.hiberus.cursos.agrupadoralumnos.avro",
+          "name": "Alumno",
+          "fields": [
+            {
+              "name": "identificador",
+              "type": "string"
+            },
+            {
+              "name": "nombre",
+              "type": "string"
+            },
+            {
+              "name": "apellidos",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "namespace": "com.hiberus.cursos.enviadorprofesores.avro",
+  "name": "ProfesorKey",
+  "fields": [
+    {
+      "name": "dni",
+      "type": "string"
+    }
+  ]
+}

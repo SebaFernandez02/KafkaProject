@@ -1,0 +1,32 @@
+{
+  "type": "record",
+  "namespace": "com.hiberus.cursos.agrupadorprofesores.avro",
+  "name": "ProfesoresPorAsignaturaYNivelKey",
+  "fields": [
+    {
+      "name": "asignatura",
+      "type": {
+        "type": "enum",
+        "name": "Asignatura",
+        "namespace": "com.hiberus.cursos.gestorclases.avro",
+        "symbols": [
+          "MATEMATICAS",
+          "LENGUA",
+          "INGLES"
+        ]
+      }
+    },
+    {
+      "name": "nivel",
+      "type": {
+        "type": "enum",
+        "name": "Nivel",
+        "namespace": "com.hiberus.cursos.gestorclases.avro",
+        "symbols": [
+          "PRIMARIA",
+          "SECUNDARIA"
+        ]
+      }
+    }
+  ]
+}
