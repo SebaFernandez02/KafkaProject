@@ -145,6 +145,7 @@
 	<modules>
 		<module>usuariosCRUD</module>
 		<module>suscripcionesCRUD</module>
+		<module>agregadorSuscripciones</module>
 	</modules>
 
 </project>

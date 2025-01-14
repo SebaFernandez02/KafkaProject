@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="suscripcionesCRUD" />
         <module name="usuarios-crud" />
+        <module name="agregadorSuscripciones" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="agregadorSuscripciones" options="-parameters" />
       <module name="agrupador-alumnos" options="-parameters" />
       <module name="agrupador-profesores" options="-parameters" />
       <module name="asignador-profesores" options="-parameters" />

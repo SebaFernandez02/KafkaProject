@@ -6,6 +6,6 @@ import com.usuarios.dto.SuscriptionDto;
 public class SuscriptionValueMapper implements Mapper<SuscriptionValue, SuscriptionDto> {
     @Override
     public SuscriptionValue dtoToEntity(SuscriptionDto dto) {
-        return SuscriptionValue.newBuilder().setIdUser(dto.getIdUser().toString()).setName(dto.getType().name()).build();
+        return SuscriptionValue.newBuilder().setIdUser(dto.getIdUser()).setName(dto.getType()).build();
     }
 }

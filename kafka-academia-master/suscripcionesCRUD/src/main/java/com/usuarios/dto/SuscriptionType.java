@@ -14,7 +14,7 @@ public enum SuscriptionType {
     TIROLESA,
     INFANTIL;
 
-    public SuscriptionType parse(String type){
+    public static SuscriptionType parse(String type){
         try{
             return SuscriptionType.valueOf(type.toUpperCase(Locale.ROOT));
         }catch (Exception e){

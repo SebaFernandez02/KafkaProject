@@ -3,6 +3,7 @@ package com.usuarios.service.impl;
 import com.usuarios.avro.SuscriptionKey;
 import com.usuarios.avro.SuscriptionValue;
 import com.usuarios.dto.SuscriptionDto;
+import com.usuarios.dto.SuscriptionType;
 import com.usuarios.service.SuscriptionService;
 import com.usuarios.service.mapper.SuscriptionKeyMapper;
 import com.usuarios.service.mapper.SuscriptionValueMapper;
@@ -25,10 +26,18 @@ public class SuscriptionServiceImpl implements SuscriptionService {
 
     @Override
     public void createSuscription(SuscriptionDto suscriptionDto) {
-        if (suscriptionDto == null || suscriptionDto.getIdUser() == null || suscriptionDto.getType() == null){
+        if (suscriptionDto == null || suscriptionDto.getIdUser().isBlank() || suscriptionDto.getType().isBlank()){
             log.error("La suscripcion es nula o esta incompleta");
             return;
         }
+
+        try {
+            String type = SuscriptionType.parse(suscriptionDto.getType()).toString();
+            suscriptionDto.setType(type);
+        }catch (Exception e){
+            log.error("Tipo de suscripcion invalida");
+        }
+
         SuscriptionKey suscriptionKey = new SuscriptionKeyMapper().dtoToEntity(suscriptionDto);
         SuscriptionValue suscriptionValue = new SuscriptionValueMapper().dtoToEntity(suscriptionDto);
 
