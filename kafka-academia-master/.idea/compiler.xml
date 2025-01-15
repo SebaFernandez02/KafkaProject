@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="suscripcionesCRUD" />
-        <module name="usuarios-crud" />
         <module name="agregadorSuscripciones" />
+        <module name="usuariosCRUD" />
+        <module name="MixbiUsuarioSuscripcion" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,11 +21,12 @@
       <module name="enviador-profesores" target="11" />
       <module name="gestor-clases" target="11" />
       <module name="kafka-LowLevelProducer" target="11" />
-      <module name="usuariosCRUD" target="11" />
+      <module name="usuarios-crud" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MixbiUsuarioSuscripcion" options="-parameters" />
       <module name="agregadorSuscripciones" options="-parameters" />
       <module name="agrupador-alumnos" options="-parameters" />
       <module name="agrupador-profesores" options="-parameters" />

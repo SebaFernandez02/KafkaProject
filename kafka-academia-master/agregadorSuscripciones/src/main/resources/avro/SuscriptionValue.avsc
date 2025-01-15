@@ -9,7 +9,20 @@
     },
     {
       "name": "name",
-      "type": "string"
+      "type": {
+        "type": "enum",
+        "name": "Tipo",
+        "namespace": "es.curso.kafka.avro",
+        "symbols": [
+          "ACUATICO",
+          "AEREO",
+          "KARTING",
+          "LASER",
+          "TIROLESA",
+          "INFANTIL"
+        ]
+      }
+
     }
   ]
 }

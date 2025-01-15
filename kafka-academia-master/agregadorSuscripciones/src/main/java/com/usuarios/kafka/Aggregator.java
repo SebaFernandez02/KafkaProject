@@ -1,5 +1,6 @@
 package com.usuarios.kafka;
 
+import es.curso.kafka.avro.Tipo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import com.usuarios.avro.*;
@@ -21,7 +22,7 @@ public class Aggregator implements org.apache.kafka.streams.kstream.Aggregator<S
 
 
 
-        suscriptionsValue.getSuscriptions().add(Suscription.newBuilder().setType(suscriptionValue.getName()).build());
+        suscriptionsValue.getSuscriptions().add(Suscription.newBuilder().setType(suscriptionValue.getName().name()).build());
         return suscriptionsValue;
     }
 }
