@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MixbiUsuarioSuscripcion/target/generated-sources/avro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PCSsuscriptores/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PCSsuscriptores/target/generated-sources/avro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/agregadorSuscripciones/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/agregadorSuscripciones/target/generated-sources/avro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/agrupador-alumnos/src/main/java" charset="UTF-8" />

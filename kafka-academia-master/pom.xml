@@ -147,6 +147,7 @@
 		<module>suscripcionesCRUD</module>
 		<module>agregadorSuscripciones</module>
 		<module>MixbiUsuarioSuscripcion</module>
+		<module>PCSsuscriptores</module>
 	</modules>
 
 </project>

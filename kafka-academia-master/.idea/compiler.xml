@@ -10,6 +10,7 @@
         <module name="agregadorSuscripciones" />
         <module name="usuariosCRUD" />
         <module name="MixbiUsuarioSuscripcion" />
+        <module name="PCSsuscriptores" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -27,6 +28,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="MixbiUsuarioSuscripcion" options="-parameters" />
+      <module name="PCSsuscriptores" options="-parameters" />
       <module name="agregadorSuscripciones" options="-parameters" />
       <module name="agrupador-alumnos" options="-parameters" />
       <module name="agrupador-profesores" options="-parameters" />

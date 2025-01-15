@@ -3,7 +3,7 @@ server.port: 9051
 # Nombres de topics
 topic-in-0: users
 topic-in-1: suscriptionsAggregated
-topic-out-0: suscriptors
+topic-out-0: suscribers
 
 spring:
   # Cambiar este nombre reinicia el procesamiento desde el inicio
