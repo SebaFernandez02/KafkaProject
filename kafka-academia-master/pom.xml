@@ -148,6 +148,7 @@
 		<module>agregadorSuscripciones</module>
 		<module>MixbiUsuarioSuscripcion</module>
 		<module>PCSsuscriptores</module>
+		<module>suscriptoresGET</module>
 	</modules>
 
 </project>

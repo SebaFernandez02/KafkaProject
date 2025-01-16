@@ -9,6 +9,7 @@
         <module name="suscripcionesCRUD" />
         <module name="agregadorSuscripciones" />
         <module name="usuariosCRUD" />
+        <module name="suscriptoresGET" />
         <module name="MixbiUsuarioSuscripcion" />
         <module name="PCSsuscriptores" />
       </profile>
@@ -39,6 +40,7 @@
       <module name="gestor-clases" options="-parameters" />
       <module name="kafka-LowLevelProducer" options="-parameters" />
       <module name="suscripcionesCRUD" options="-parameters" />
+      <module name="suscriptoresGET" options="-parameters" />
       <module name="usuarios-crud" options="-parameters" />
       <module name="usuariosCRUD" options="-parameters" />
     </option>

@@ -79,7 +79,24 @@ services:
             - kafka
         restart: always
 
+    suscriptores-get-db:
+        image: postgres:14.1-alpine
+        container_name: suscriptores-get-db
+        restart: always
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DB=suscribers
+        ports:
+            - "5432:5432"
+        volumes:
+            - data:/var/lib/postgresql/data
+
+volumes:
+    data:
+        driver: local
+
 
 networks:
-    default:
-        name: moodle
+    suscribers-network:
+        driver: bridge

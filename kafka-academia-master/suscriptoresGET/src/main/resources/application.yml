@@ -1,0 +1,31 @@
+server:
+  port: 9055
+
+
+spring:
+  application:
+    name: kafka-LowLevelConsumer
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: ${spring.application.name}
+      auto-offset-reset: earliest
+      properties:
+        key.deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
+        value.deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
+        schema.registry.url: http://localhost:8081
+
+
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+
+

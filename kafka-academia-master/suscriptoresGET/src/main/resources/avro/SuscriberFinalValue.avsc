@@ -1,0 +1,40 @@
+{
+  "type" : "record",
+  "namespace": "com.usuarios.avro",
+  "name": "SuscriberFinalValue",
+  "fields": [
+    {
+      "name": "idUser",
+      "type": "string"
+    },
+    {
+      "name": "username",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "name": "suscriptions",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "namespace": "com.usuarios.avro",
+          "name": "Suscription",
+          "fields": [
+            {
+              "name": "type",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "date",
+      "type": "string"
+    }
+  ]
+}
