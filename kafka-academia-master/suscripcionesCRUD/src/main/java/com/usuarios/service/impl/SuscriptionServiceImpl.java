@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import java.security.InvalidParameterException;
 import java.util.UUID;
 
 @Service
@@ -28,7 +29,7 @@ public class SuscriptionServiceImpl implements SuscriptionService {
     public void createSuscription(SuscriptionDto suscriptionDto) {
         if (suscriptionDto == null || suscriptionDto.getIdUser().isBlank() || suscriptionDto.getType().isBlank()){
             log.error("La suscripcion es nula o esta incompleta");
-            return;
+            throw new InvalidParameterException("La suscripcion es nula o incompleta");
         }
 
         try {
@@ -36,6 +37,7 @@ public class SuscriptionServiceImpl implements SuscriptionService {
             suscriptionDto.setType(type);
         }catch (Exception e){
             log.error("Tipo de suscripcion invalida");
+            throw new InvalidParameterException("Tipo de suscripcion invalida");
         }
 
         SuscriptionKey suscriptionKey = new SuscriptionKeyMapper().dtoToEntity(suscriptionDto);
