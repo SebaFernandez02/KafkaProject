@@ -14,6 +14,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import java.security.InvalidParameterException;
 import java.util.UUID;
 
 @Service
@@ -26,9 +27,9 @@ public class UserServiceImpl implements UserService {
     private KafkaTemplate<UserKey, UserValue> kafkaTemplate;
     @Override
     public void createUser(UserDto user) {
-        if (user == null || user.getUsername() == null || user.getEmail() == null){
+        if (user == null || user.getUsername().isBlank() || user.getEmail().isBlank()){
             log.error("El usuario es nulo o esta incompleto");
-            return;
+            throw new InvalidParameterException("Usuario nulo o incompleto");
         }
         user.setId(UUID.randomUUID());
 
