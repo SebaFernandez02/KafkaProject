@@ -7,7 +7,7 @@ public class SuscriptionKeyMapper implements Mapper<SuscriptionKey, SuscriptionD
 
     @Override
     public SuscriptionKey dtoToEntity(SuscriptionDto dto) {
-        return SuscriptionKey.newBuilder().setIdUser(dto.getIdUser().toString()).build();
+        return SuscriptionKey.newBuilder().setIdUser(dto.getIdUser()).build();
 
     }
 }

@@ -35,15 +35,16 @@ public class SuscriptionServiceImpl implements SuscriptionService {
         try {
             String type = SuscriptionType.parse(suscriptionDto.getType()).toString();
             suscriptionDto.setType(type);
+
+            SuscriptionKey suscriptionKey = new SuscriptionKeyMapper().dtoToEntity(suscriptionDto);
+            SuscriptionValue suscriptionValue = new SuscriptionValueMapper().dtoToEntity(suscriptionDto);
+
+            log.debug("Enviando la suscripcion al topic de Kafka");
+            kafkaTemplate.send(suscriptionsTopic, suscriptionKey, suscriptionValue);
         }catch (Exception e){
             log.error("Tipo de suscripcion invalida");
             throw new InvalidParameterException("Tipo de suscripcion invalida");
         }
 
-        SuscriptionKey suscriptionKey = new SuscriptionKeyMapper().dtoToEntity(suscriptionDto);
-        SuscriptionValue suscriptionValue = new SuscriptionValueMapper().dtoToEntity(suscriptionDto);
-
-        log.debug("Enviando la suscripcion al topic de Kafka");
-        kafkaTemplate.send(suscriptionsTopic, suscriptionKey, suscriptionValue);
     }
 }
