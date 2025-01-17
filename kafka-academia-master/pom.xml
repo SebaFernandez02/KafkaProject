@@ -22,6 +22,13 @@
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.compiler.release>11</maven.compiler.release>
 		<spring-boot.version>2.7.12</spring-boot.version>
+		<!-- Configuración de SonarQube -->
+		<sonar.projectKey>Kafka</sonar.projectKey>
+		<sonar.host.url>http://localhost:9000</sonar.host.url> <!-- URL de tu servidor SonarQube -->
+		<sonar.sources>src/main/java</sonar.sources> <!-- Directorio donde están tus fuentes -->
+		<sonar.toker>sqp_267e37a70ec5cd12bbae3227927b93d002ec79d0</sonar.toker>
+		<sonar.login>admin</sonar.login>
+		<sonar.password>123Cuatro...</sonar.password>
 	</properties>
 
 	<dependencies>
@@ -146,6 +153,13 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+
+			<!-- Agregar SonarQube Maven Plugin -->
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.7.0.1746</version> <!-- O la versión más reciente disponible -->
 			</plugin>
 		</plugins>
 	</build>

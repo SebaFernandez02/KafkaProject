@@ -1,4 +1,4 @@
-package com.usuarios.kafka;
+package com.usuarios.kafkaConsumer;
 
 import com.usuarios.avro.SuscriptionsValue;
 import lombok.extern.slf4j.Slf4j;

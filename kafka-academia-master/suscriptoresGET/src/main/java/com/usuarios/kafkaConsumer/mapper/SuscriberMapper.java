@@ -1,4 +1,4 @@
-package com.usuarios.kafka.mapper;
+package com.usuarios.kafkaConsumer.mapper;
 
 import com.usuarios.avro.SuscriberFinalKey;
 import com.usuarios.avro.SuscriberFinalValue;
@@ -6,7 +6,6 @@ import com.usuarios.avro.Suscription;
 import com.usuarios.dto.SuscriberDto;
 import com.usuarios.dto.SuscriptionType;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

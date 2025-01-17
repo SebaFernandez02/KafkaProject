@@ -1,14 +1,13 @@
-package com.usuarios.kafka;
+package com.usuarios.kafkaConsumer;
 
 
 import com.usuarios.avro.SuscriberFinalKey;
 import com.usuarios.avro.SuscriberFinalValue;
-import com.usuarios.kafka.mapper.SuscriberMapper;
+import com.usuarios.kafkaConsumer.mapper.SuscriberMapper;
 import com.usuarios.service.SuscriberService;
 import lombok.extern.slf4j.Slf4j;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.streams.kstream.KStream;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.context.annotation.Configuration;

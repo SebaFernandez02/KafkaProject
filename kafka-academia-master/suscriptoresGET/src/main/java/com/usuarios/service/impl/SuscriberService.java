@@ -1,7 +1,6 @@
 package com.usuarios.service.impl;
 
 import com.usuarios.dto.SuscriberDto;
-import com.usuarios.kafka.mapper.Mapper;
 import com.usuarios.model.Suscriber;
 import com.usuarios.repository.SuscribersRepository;
 import lombok.extern.slf4j.Slf4j;
