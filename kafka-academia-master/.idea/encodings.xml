@@ -29,6 +29,5 @@
     <file url="file://$PROJECT_DIR$/suscriptoresGET/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/suscriptoresGET/target/generated-sources/avro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/usuariosCRUD/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/usuariosCRUD/target/generated-sources/avro" charset="UTF-8" />
   </component>
 </project>
