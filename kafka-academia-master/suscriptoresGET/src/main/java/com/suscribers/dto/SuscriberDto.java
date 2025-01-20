@@ -14,4 +14,5 @@ public class SuscriberDto {
     private String email;
     private ArrayList<SuscriptionType> suscriptions;
     private LocalDateTime date;
+
 }

@@ -1,6 +1,6 @@
 {
   "type" : "record",
-  "namespace": "com.pcs.avro",
+  "namespace": "com.suscribers.avro",
   "name": "SuscriberValue",
   "fields": [
     {
@@ -21,7 +21,7 @@
         "type": "array",
         "items": {
           "type": "record",
-          "namespace": "com.pcs.avro",
+          "namespace": "com.suscribers.avro",
           "name": "Suscription",
           "fields": [
             {

@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "namespace": "com.aggregator.avro",
+  "namespace": "com.suscribers.avro",
   "name": "SuscriptionKey",
   "fields": [
     {

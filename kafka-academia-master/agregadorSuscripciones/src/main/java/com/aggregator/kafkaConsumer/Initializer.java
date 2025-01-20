@@ -1,6 +1,6 @@
 package com.aggregator.kafkaConsumer;
 
-import com.aggregator.avro.SuscriptionsValue;
+import com.suscribers.avro.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

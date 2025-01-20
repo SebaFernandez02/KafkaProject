@@ -1,9 +1,6 @@
 package com.aggregator.kafkaConsumer;
 
-import com.aggregator.avro.SuscriptionKey;
-import com.aggregator.avro.SuscriptionValue;
-import com.aggregator.avro.SuscriptionsKey;
-import com.aggregator.avro.SuscriptionsValue;
+import com.suscribers.avro.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.Materialized;

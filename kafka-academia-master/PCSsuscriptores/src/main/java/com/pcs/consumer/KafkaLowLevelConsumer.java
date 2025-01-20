@@ -1,7 +1,6 @@
 package com.pcs.consumer;
 
-import com.pcs.avro.SuscriberKey;
-import com.pcs.avro.SuscriberValue;
+import com.suscribers.avro.*;
 import com.pcs.producer.KafkaLowLevelProducer;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

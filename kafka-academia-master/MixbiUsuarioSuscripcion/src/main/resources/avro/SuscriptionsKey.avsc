@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "namespace": "com.mixbi.avro",
+  "namespace": "com.suscribers.avro",
   "name": "SuscriptionsKey",
   "fields": [
     {

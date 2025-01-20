@@ -47,23 +47,14 @@ public class SuscriberService implements com.suscribers.service.SuscriberService
 
         Suscriber suscriber = suscribersRepository.findById(UUID.fromString(id)).orElseThrow(() -> new EntityNotFoundException("No se encontro un suscriptor con el id: " + id));
 
-        return toDto(suscriber);
+        return suscriber.toDto();
     }
 
     @Override
     public List<SuscriberDto> getSuscribers() {
-        List<SuscriberDto> suscriberDtoList = suscribersRepository.findAll().stream().map(this::toDto).collect(Collectors.toList());
 
-        return suscriberDtoList;
+        return suscribersRepository.findAll().stream().map(Suscriber::toDto).collect(Collectors.toList());
     }
 
-    private SuscriberDto toDto(Suscriber suscriber){
-        return SuscriberDto.builder()
-                .id(suscriber.getId().toString())
-                .username(suscriber.getUsername())
-                .email(suscriber.getEmail())
-                .suscriptions(suscriber.getSuscriptions())
-                .date(suscriber.getDate().toLocalDateTime())
-                .build();
-    }
+
 }

@@ -1,6 +1,7 @@
 package com.mixbi;
 
-import com.mixbi.avro.*;
+import com.suscribers.avro.*;
+import com.usuarios.avro.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.KTable;

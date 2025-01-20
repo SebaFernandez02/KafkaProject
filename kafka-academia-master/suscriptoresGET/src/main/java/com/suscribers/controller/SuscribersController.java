@@ -1,7 +1,6 @@
 package com.suscribers.controller;
 
 import com.suscribers.dto.SuscriberDto;
-import com.suscribers.kafkaConsumer.LowLevelConsumer;
 import com.suscribers.service.SuscriberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,20 @@ public class SuscribersController {
     @Autowired
     SuscriberService suscriberService;
 
+    @GetMapping("/getSuscribers")
+    public ResponseEntity<List<SuscriberDto>> getSuscriberss(){
+        try {
+            log.info("try");
+            List<SuscriberDto> suscriberDtos = suscriberService.getSuscribers();
+            log.info("tengo la lista");
+            return new ResponseEntity<>(suscriberDtos, HttpStatus.OK);
 
-    @GetMapping("/{id}")
+        }catch (Exception e){
+            log.info("catch");
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+    @GetMapping("/getSusciber/{id}")
     public ResponseEntity<SuscriberDto> getSuscriber(@PathVariable String id){
         try {
             SuscriberDto suscriber = suscriberService.getSuscriber(id);
@@ -32,18 +43,11 @@ public class SuscribersController {
 
         }catch (Exception e){
 
+            log.info("un suscriber");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
         }
     }
 
-    @GetMapping
-    public ResponseEntity<List<SuscriberDto>> getSuscribers(){
-        try {
-            return new ResponseEntity<>(suscriberService.getSuscribers(), HttpStatus.OK);
 
-        }catch (Exception e){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
 }

@@ -1,9 +1,6 @@
 package com.pcs.producer;
 
-import com.pcs.avro.SuscriberFinalKey;
-import com.pcs.avro.SuscriberFinalValue;
-import com.pcs.avro.SuscriberKey;
-import com.pcs.avro.SuscriberValue;
+import com.suscribers.avro.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;

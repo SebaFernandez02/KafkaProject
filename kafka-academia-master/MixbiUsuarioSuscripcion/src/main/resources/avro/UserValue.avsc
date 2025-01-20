@@ -1,6 +1,6 @@
 {
   "type" : "record",
-  "namespace": "com.mixbi.avro",
+  "namespace": "com.usuarios.avro",
   "name": "UserValue",
   "fields": [
     {

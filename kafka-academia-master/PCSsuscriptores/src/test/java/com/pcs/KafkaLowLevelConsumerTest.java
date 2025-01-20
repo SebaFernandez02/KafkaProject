@@ -1,12 +1,8 @@
 package com.pcs;
 
-import com.pcs.avro.SuscriberFinalKey;
-import com.pcs.avro.SuscriberFinalValue;
-import com.pcs.avro.SuscriberKey;
-import com.pcs.avro.SuscriberValue;
+import com.suscribers.avro.*;
 import com.pcs.consumer.KafkaLowLevelConsumer;
 import com.pcs.producer.KafkaLowLevelProducer;
-import com.usuarios.avro.*;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;

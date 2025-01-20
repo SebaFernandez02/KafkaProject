@@ -12,7 +12,7 @@
       "type": {
         "type": "enum",
         "name": "Tipo",
-        "namespace": "es.curso.kafka.avro",
+        "namespace": "com.suscribers.avro",
         "symbols": [
           "ACUATICO",
           "AEREO",

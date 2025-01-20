@@ -1,6 +1,6 @@
 package com.aggregator;
 
-import com.aggregator.avro.SuscriptionsValue;
+import com.suscribers.avro.*;
 import com.aggregator.kafkaConsumer.Initializer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

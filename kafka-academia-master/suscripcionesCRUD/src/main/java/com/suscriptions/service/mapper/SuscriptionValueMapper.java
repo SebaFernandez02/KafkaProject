@@ -3,7 +3,7 @@ package com.suscriptions.service.mapper;
 import com.suscribers.avro.SuscriptionValue;
 import com.suscriptions.dto.SuscriptionDto;
 import com.suscriptions.dto.SuscriptionType;
-import es.curso.kafka.avro.Tipo;
+import com.suscribers.avro.*;
 
 public class SuscriptionValueMapper implements Mapper<SuscriptionValue, SuscriptionDto> {
     @Override
