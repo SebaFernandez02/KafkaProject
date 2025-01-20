@@ -1,6 +1,6 @@
 {
   "type" : "record",
-  "namespace": "com.usuarios.avro",
+  "namespace": "com.aggregator.avro",
   "name": "SuscriptionValue",
   "fields": [
     {
@@ -12,7 +12,7 @@
       "type": {
         "type": "enum",
         "name": "Tipo",
-        "namespace": "es.curso.kafka.avro",
+        "namespace": "com.aggregator.avro",
         "symbols": [
           "ACUATICO",
           "AEREO",

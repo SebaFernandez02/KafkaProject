@@ -21,7 +21,7 @@
         "type": "array",
         "items": {
           "type": "record",
-          "namespace": "com.usuarios.avro",
+          "namespace": "com.suscribers.avro",
           "name": "Suscription",
           "fields": [
             {

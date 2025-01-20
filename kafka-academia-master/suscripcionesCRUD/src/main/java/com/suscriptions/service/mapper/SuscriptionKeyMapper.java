@@ -1,6 +1,6 @@
 package com.suscriptions.service.mapper;
 
-import com.suscriptions.avro.SuscriptionKey;
+import com.suscribers.avro.SuscriptionKey;
 import com.suscriptions.dto.SuscriptionDto;
 
 public class SuscriptionKeyMapper implements Mapper<SuscriptionKey, SuscriptionDto> {

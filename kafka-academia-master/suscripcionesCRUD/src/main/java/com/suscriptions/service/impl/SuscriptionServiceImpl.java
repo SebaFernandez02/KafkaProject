@@ -1,7 +1,7 @@
 package com.suscriptions.service.impl;
 
-import com.suscriptions.avro.SuscriptionKey;
-import com.suscriptions.avro.SuscriptionValue;
+import com.suscribers.avro.SuscriptionKey;
+import com.suscribers.avro.SuscriptionValue;
 import com.suscriptions.dto.SuscriptionDto;
 import com.suscriptions.dto.SuscriptionType;
 import com.suscriptions.service.SuscriptionService;

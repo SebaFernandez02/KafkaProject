@@ -1,6 +1,6 @@
 {
   "type" : "record",
-  "namespace": "com.usuarios.avro",
+  "namespace": "com.mixbi.avro",
   "name": "SuscriptionsValue",
   "fields": [
     {
@@ -9,7 +9,7 @@
         "type": "array",
         "items": {
           "type": "record",
-          "namespace": "com.usuarios.avro",
+          "namespace": "com.mixbi.avro",
           "name": "Suscription",
           "fields": [
             {

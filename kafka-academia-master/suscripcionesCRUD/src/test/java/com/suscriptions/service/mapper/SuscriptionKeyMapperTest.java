@@ -1,6 +1,6 @@
 package com.suscriptions.service.mapper;
 
-import com.suscriptions.avro.SuscriptionKey;
+import com.suscribers.avro.SuscriptionKey;
 import com.suscriptions.dto.SuscriptionDto;
 import org.apache.avro.AvroRuntimeException;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "namespace": "com.usuarios.avro",
+  "namespace": "com.mixbi.avro",
   "name": "UserKey",
   "fields": [
     {

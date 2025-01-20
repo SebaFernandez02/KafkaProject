@@ -1,11 +1,11 @@
 package com.aggregator;
 
 import com.aggregator.avro.SuscriptionValue;
-import com.aggregator.avro.Suscription;
 import com.aggregator.avro.SuscriptionsKey;
 import com.aggregator.avro.SuscriptionsValue;
 import com.aggregator.kafkaConsumer.Aggregator;
-import es.curso.kafka.avro.Tipo;
+import com.aggregator.avro.Suscription;
+import com.aggregator.avro.Tipo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
