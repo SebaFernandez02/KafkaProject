@@ -26,7 +26,7 @@
 		<sonar.projectKey>Kafka</sonar.projectKey>
 		<sonar.host.url>http://localhost:9000</sonar.host.url> <!-- URL de tu servidor SonarQube -->
 		<sonar.sources>src/main/java</sonar.sources> <!-- Directorio donde están tus fuentes -->
-		<sonar.toker>sqp_267e37a70ec5cd12bbae3227927b93d002ec79d0</sonar.toker>
+		<sonar.toker>sqp_2d510511304ee1ad6d61e9f23384c300820608b2</sonar.toker>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>123Cuatro...</sonar.password>
 	</properties>
@@ -160,6 +160,26 @@
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>3.7.0.1746</version> <!-- O la versión más reciente disponible -->
+			</plugin>
+
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.8</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

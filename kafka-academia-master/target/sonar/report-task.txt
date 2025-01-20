@@ -2,5 +2,5 @@ projectKey=Kafka
 serverUrl=http://localhost:9000
 serverVersion=25.1.0.102122
 dashboardUrl=http://localhost:9000/dashboard?id=Kafka
-ceTaskId=01f2c2c2-17a6-4e74-9376-a163006e22db
-ceTaskUrl=http://localhost:9000/api/ce/task?id=01f2c2c2-17a6-4e74-9376-a163006e22db
+ceTaskId=e9559a4b-087d-4a1a-ac61-166425fc6457
+ceTaskUrl=http://localhost:9000/api/ce/task?id=e9559a4b-087d-4a1a-ac61-166425fc6457
