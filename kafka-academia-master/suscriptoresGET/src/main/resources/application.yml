@@ -1,24 +1,21 @@
 server:
-  port: 9055
+  port: 8080
 
 
 spring:
   application:
     name: kafka-LowLevelConsumer
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${kafka:localhost}:29092
     consumer:
       group-id: ${spring.application.name}
       auto-offset-reset: earliest
       properties:
         key.deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
         value.deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
-        schema.registry.url: http://localhost:8081
-
-
-
+        schema.registry.url: http://${schema-registry:localhost}:8081
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://suscriptores-get-db:5432/suscribers
     username: postgres
     password: postgres
 
@@ -27,5 +24,20 @@ spring:
     show-sql: false
     hibernate:
       ddl-auto: update
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    web:
+      exposure:
+        include: '*'
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+
 
 

@@ -79,6 +79,70 @@ services:
             - kafka
         restart: always
 
+    usuarios-crud:
+        build: ./usuariosCRUD
+        container_name: usuarios-crud
+        restart: always
+        ports:
+            - "8090:8080"
+        environment:
+            - "kafka=kafka"
+            - "schema-registry=schema-registry"
+
+    sucripciones-crud:
+        build: ./suscripcionesCRUD
+        container_name: suscripciones-crud
+        restart: always
+        ports:
+            - "8091:8080"
+        environment:
+            - "kafka=kafka"
+            - "schema-registry=schema-registry"
+
+    suscriptores-get:
+        build: ./suscriptoresGET
+        container_name: suscriptores-get
+        restart: always
+        depends_on:
+        - suscriptores-get-db
+        ports:
+            - "8092:8080"
+        environment:
+            - "kafka=kafka"
+            - "schema-registry=schema-registry"
+            - "suscriptores-get-db=suscriptores-get-db"
+
+    pcs:
+        build: ./PCSsuscriptores
+        container_name: pcs-suscriptores
+        restart: always
+        ports:
+            - "8093:8080"
+        environment:
+            - "kafka=kafka"
+            - "schema-registry=schema-registry"
+
+    agregador-suscripciones:
+        build: ./agregadorSuscripciones
+        container_name: agregador-suscripciones
+        restart: always
+        ports:
+            - "8094:8080"
+        environment:
+            - "kafka=kafka"
+            - "schema-registry=schema-registry"
+
+    mixbi:
+        build: ./MixbiUsuarioSuscripcion
+        container_name: mixbi
+        restart: always
+        ports:
+            - "8095:8080"
+        environment:
+            - "kafka=kafka"
+            - "schema-registry=schema-registry"
+
+
     suscriptores-get-db:
         image: postgres:14.1-alpine
         container_name: suscriptores-get-db
@@ -92,9 +156,62 @@ services:
         volumes:
             - data:/var/lib/postgresql/data
 
+
+    prometheus:
+        image: prom/prometheus
+        container_name: prometheus
+        command:
+            - '--config.file=/etc/prometheus/prometheus.yml'
+            - '--storage.tsdb.path=/prometheus'
+            - '--web.console.libraries=/etc/prometheus/console_libraries'
+            - '--web.console.templates=/etc/prometheus/consoles'
+            - '--web.enable-lifecycle'
+        ports:
+            - 9090:9090
+        networks:
+            - suscribers-network
+        restart: unless-stopped
+        volumes:
+            - ./prometheus.yml:/etc/prometheus/prometheus.yml
+            - prom_data:/prometheus
+
+    grafana:
+        image: grafana/grafana
+        container_name: grafana
+        ports:
+            - 3000:3000
+        networks:
+            - suscribers-network
+        restart: unless-stopped
+        environment:
+            - GF_SECURITY_ADMIN_USER=admin
+            - GF_SECURITY_ADMIN_PASSWORD=admin
+        volumes:
+            - ./grafana:/etc/grafana/provisioning/datasources.yml
+
+    node-exporter:
+        image: prom/node-exporter:latest
+        container_name: node-exporter
+        restart: unless-stopped
+        volumes:
+            - /proc:/host/proc:ro
+            - /sys:/host/sys:ro
+            - /:/rootfs:ro
+        command:
+            - '--path.procfs=/host/proc'
+            - '--path.rootfs=/rootfs'
+            - '--path.sysfs=/host/sys'
+            - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+        expose:
+            - 9100
+        networks:
+            - suscribers-network
+
+
 volumes:
     data:
         driver: local
+    prom_data: {}
 
 
 networks:

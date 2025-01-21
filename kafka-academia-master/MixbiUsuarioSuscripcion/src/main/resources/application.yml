@@ -1,4 +1,4 @@
-server.port: 9051
+server.port: 8080
 
 # Nombres de topics
 topic-in-0: users
@@ -52,13 +52,28 @@ spring:
           configuration:
             commit.interval.ms: 100
             session.timeout.ms: 10000
-            schema.registry.url: http://localhost:8081
+            schema.registry.url: http://${schema-registry:localhost}:8081
             auto.register.schemas: true
             default.key.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
             default.value.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
-
-  # Configuracion de productores
+      kafka:
+        binder:
+          brokers: ${kafka:localhost}:29092  # Configuracion de productores
   kafka.producer.properties:
     key.serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
     value.serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
-    schema.registry.url: http://localhost:8081
+    schema.registry.url: http://${schema-registry:localhost}:8081
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    web:
+      exposure:
+        include: '*'
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true

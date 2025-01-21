@@ -1,0 +1,42 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "prometheus"
+
+    static_configs:
+      - targets: ["prometheus:9090"]
+
+  - job_name: "node_exporter"
+    static_configs:
+      - targets: ["node-exporter:9100"]
+
+  - job_name: "usuariosCRUD"
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ["172.17.0.1:8100"]
+
+  - job_name: "suscripcionesCRUD"
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: [ "172.17.0.1:8101" ]
+
+  - job_name: "suscriptoresGET"
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ["172.17.0.1:9055"]
+
+  - job_name: "PCSsuscriptores"
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ["172.17.0.1:9052"]
+
+  - job_name: "MixbiUsuarioSuscripcion"
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ["172.17.0.1:9051"]
+
+  - job_name: "agregadorSuscripciones"
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ["172.17.0.1:9050"]
