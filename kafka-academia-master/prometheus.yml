@@ -14,29 +14,29 @@ scrape_configs:
   - job_name: "usuariosCRUD"
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ["172.17.0.1:8100"]
+      - targets: ["usuarios-crud:8080"]
 
   - job_name: "suscripcionesCRUD"
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: [ "172.17.0.1:8101" ]
+      - targets: [ "sucripciones-crud:8080" ]
 
   - job_name: "suscriptoresGET"
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ["172.17.0.1:9055"]
+      - targets: ["suscriptores-get:8080"]
 
   - job_name: "PCSsuscriptores"
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ["172.17.0.1:9052"]
+      - targets: ["pcs:8080"]
 
   - job_name: "MixbiUsuarioSuscripcion"
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ["172.17.0.1:9051"]
+      - targets: ["mixbi:8080"]
 
   - job_name: "agregadorSuscripciones"
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ["172.17.0.1:9050"]
+      - targets: ["agregador-suscripciones:8080"]

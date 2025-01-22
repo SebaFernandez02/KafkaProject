@@ -54,16 +54,3 @@ spring:
     binder:
       brokers: ${kafka:localhost}:29092  # Configuracion de productores
 
-management:
-  endpoint:
-    metrics:
-      enabled: true
-    web:
-      exposure:
-        include: '*'
-    prometheus:
-      enabled: true
-  metrics:
-    export:
-      prometheus:
-        enabled: true

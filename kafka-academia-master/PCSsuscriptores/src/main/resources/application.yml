@@ -19,16 +19,3 @@ spring:
         schema.registry.url: http://${schema-registry:localhost}:8081
 
 
-management:
-  endpoint:
-    metrics:
-      enabled: true
-    web:
-      exposure:
-        include: '*'
-    prometheus:
-      enabled: true
-  metrics:
-    export:
-      prometheus:
-        enabled: true

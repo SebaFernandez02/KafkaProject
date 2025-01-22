@@ -12,19 +12,7 @@ spring:
         value.serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
         schema.registry.url: http://${schema-registry:localhost}:8081
 
-management:
-  endpoint:
-    metrics:
-      enabled: true
-    web:
-      exposure:
-        include: prometheus
-    prometheus:
-      enabled: true
-  metrics:
-    export:
-      prometheus:
-        enabled: true
+
 
 environment:
   user-topic: users
