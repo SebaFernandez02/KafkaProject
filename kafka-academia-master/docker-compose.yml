@@ -225,6 +225,21 @@ services:
             - suscribers-network
 
 
+
+    grafana:
+        image: grafana/grafana
+        container_name: grafana
+        ports:
+            - 3000:3000
+        restart: unless-stopped
+        environment:
+            - GF_SECURITY_ADMIN_USER=admin
+            - GF_SECURITY_ADMIN_PASSWORD=admin
+        volumes:
+            - ./grafana:/etc/grafana/provisioning/datasources
+        networks:
+            - suscribers-network
+
     prometheus:
         image: prom/prometheus
         container_name: prometheus
@@ -236,26 +251,13 @@ services:
             - '--web.enable-lifecycle'
         ports:
             - 9090:9090
-        networks:
-            - suscribers-network
         restart: unless-stopped
         volumes:
-            - ./prometheus.yml:/etc/prometheus/prometheus.yml
+            - ./prometheus:/etc/prometheus
             - prom_data:/prometheus
-
-    grafana:
-        image: grafana/grafana
-        container_name: grafana
-        ports:
-            - 3000:3000
         networks:
             - suscribers-network
-        restart: unless-stopped
-        environment:
-            - GF_SECURITY_ADMIN_USER=admin
-            - GF_SECURITY_ADMIN_PASSWORD=admin
-        volumes:
-            - ./grafana:/etc/grafana/provisioning/datasources.yml
+
 
     node-exporter:
         image: prom/node-exporter:latest
