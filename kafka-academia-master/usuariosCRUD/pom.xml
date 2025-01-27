@@ -16,7 +16,6 @@
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<avro.version>1.11.0</avro.version>
 		<sonar.projectKey>KafkaUsuarios</sonar.projectKey>
 		<sonar.host.url>http://localhost:9000</sonar.host.url>
 		<sonar.sources>src/main/java</sonar.sources>
@@ -33,61 +32,6 @@
 		</repository>
 	</repositories>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.avro</groupId>
-			<artifactId>avro</artifactId>
-			<version>${avro.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.avro</groupId>
-			<artifactId>avro-maven-plugin</artifactId>
-			<version>${avro.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.avro</groupId>
-			<artifactId>avro-compiler</artifactId>
-			<version>${avro.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.confluent</groupId>
-			<artifactId>kafka-streams-avro-serde</artifactId>
-			<version>5.5.0</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.avro</groupId>
-					<artifactId>avro</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>io.confluent</groupId>
-			<artifactId>kafka-avro-serializer</artifactId>
-			<version>5.5.0</version>
-		</dependency>
-		<dependency>
-			<groupId>io.confluent</groupId>
-			<artifactId>kafka-schema-registry-client</artifactId>
-			<version>5.5.0</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.24</version>
-			<scope>compile</scope>
-		</dependency>
-	</dependencies>
 
 	<build>
 		<plugins>

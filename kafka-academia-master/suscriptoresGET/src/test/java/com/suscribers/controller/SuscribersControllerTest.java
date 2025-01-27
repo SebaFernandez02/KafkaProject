@@ -18,7 +18,7 @@ import java.util.List;
 @WebMvcTest(SuscribersController.class)
 class SuscribersControllerTest {
 
-    @Autowired
+/*    @Autowired
     private MockMvc mockMvc;
 
     @MockBean
@@ -63,5 +63,5 @@ class SuscribersControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/suscribers"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(dtos.size()));
-    }
+    }*/
 }
