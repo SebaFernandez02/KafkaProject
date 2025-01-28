@@ -27,9 +27,15 @@
 		<sonar.projectKey>Kafka</sonar.projectKey>
 		<sonar.host.url>http://localhost:9000</sonar.host.url> <!-- URL de tu servidor SonarQube -->
 		<sonar.sources>src/main/java</sonar.sources> <!-- Directorio donde están tus fuentes -->
-		<sonar.toker>sqp_2d510511304ee1ad6d61e9f23384c300820608b2</sonar.toker>
+		<sonar.toker>sqp_54fbfb37b23140133fad748514c14c2b1fe353d6</sonar.toker>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>123Cuatro...</sonar.password>
+		<sonar.exclusions>usuariosCRUD/src/main/java/com.users.config, usuariosCRUD/src/main/java/com.users.dto, usuariosCRUD/src/main/java/com.users.UsuariosCrudApplication,
+						  suscripcionesCRUD/src/main/java/com.suscriptions.dto, suscripcionesCRUD/src/main/java/com.suscriptions.SuscripcionesCRUDApplication, suscripcionesCRUD/src/main/java/com.suscriptions.config,
+						  suscriptoresGET/src/main/java/com.suscribers.dto, suscriptoresGET/src/main/java/com.suscribers.SuscriptoresGetApplication, suscriptoresGET/src/main/java/com.suscribers.model, suscriptoresGET/src/main/java/com.suscribers.repository,
+						  PCSsuscriptores/src/main/java/com.pcs.PcsSuscribersApplication,
+						  MixbiUsuarioSuscripcion/src/main/java/com.mixbi.MixbiApplication,
+						  agregadorSuscripciones/src/main/java/com.aggregator.AgregadorSuscripcionesApplication</sonar.exclusions>
 	</properties>
 
 	<dependencies>

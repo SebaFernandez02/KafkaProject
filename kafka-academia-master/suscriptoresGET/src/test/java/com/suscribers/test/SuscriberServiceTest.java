@@ -21,7 +21,7 @@ import java.util.*;
 @ExtendWith(MockitoExtension.class)
 class SuscriberServiceTest {
 
-/*    @InjectMocks
+    @InjectMocks
     private SuscriberService suscriberService;
 
     @Mock
@@ -91,5 +91,5 @@ class SuscriberServiceTest {
         List<SuscriberDto> result = suscriberService.getSuscribers();
 
         Assertions.assertEquals(suscribers.size(), result.size());
-    }*/
+    }
 }

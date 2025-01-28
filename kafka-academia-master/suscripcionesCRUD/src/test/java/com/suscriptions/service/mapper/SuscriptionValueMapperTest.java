@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SuscriptionValueMapperTest {
 
     @Test
-    void dtoToEntity_ValidInput_ShouldReturnValidEntity() {
+    void dtoToEntityValidInputShouldReturnValidEntity() {
         // Arrange
         String validIdUser = "123e4567-e89b-12d3-a456-426614174000";
         SuscriptionDto dto = new SuscriptionDto();
@@ -32,7 +32,7 @@ class SuscriptionValueMapperTest {
     }
 
     @Test
-    void dtoToEntity_InvalidType_ShouldThrowException() {
+    void dtoToEntityInvalidTypeShouldThrowException() {
         // Arrange
         SuscriptionDto dto = new SuscriptionDto();
         dto.setIdUser("123e4567-e89b-12d3-a456-426614174000");
@@ -45,7 +45,7 @@ class SuscriptionValueMapperTest {
     }
 
     @Test
-    void dtoToEntity_NullIdUser_ShouldThrowException() {
+    void dtoToEntityNullIdUserShouldThrowException() {
         // Arrange
         SuscriptionDto dto = new SuscriptionDto();
         dto.setIdUser(null);
@@ -58,7 +58,7 @@ class SuscriptionValueMapperTest {
     }
 
     @Test
-    void dtoToEntity_NullType_ShouldThrowException() {
+    void dtoToEntityNullTypeShouldThrowException() {
         // Arrange
         SuscriptionDto dto = new SuscriptionDto();
         dto.setIdUser("123e4567-e89b-12d3-a456-426614174000");

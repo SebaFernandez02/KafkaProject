@@ -27,7 +27,7 @@ class SuscriptionControllerTest {
     }
 
     @Test
-    void createSuscription_ValidInput_ShouldReturnCreatedStatus() {
+    void createSuscriptionValidInputShouldReturnCreatedStatus() {
         // Arrange
         SuscriptionDto validDto = new SuscriptionDto();
         validDto.setIdUser("123e4567-e89b-12d3-a456-426614174000");
@@ -44,7 +44,7 @@ class SuscriptionControllerTest {
     }
 
     @Test
-    void createSuscription_ServiceThrowsException_ShouldReturnBadRequestStatus() {
+    void createSuscriptionServiceThrowsExceptionShouldReturnBadRequestStatus() {
         // Arrange
         SuscriptionDto validDto = new SuscriptionDto();
         validDto.setIdUser("123e4567-e89b-12d3-a456-426614174000");

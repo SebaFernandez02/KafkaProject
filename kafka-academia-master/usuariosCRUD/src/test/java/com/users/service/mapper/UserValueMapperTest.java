@@ -14,7 +14,7 @@ class UserValueMapperTest {
     private final UserValueMapper userValueMapper = new UserValueMapper();
 
     @Test
-    void testDtoToEntity_Success() {
+    void testDtoToEntitySuccess() {
         // Arrange
         UserDto userDto = new UserDto();
         UUID userId = UUID.randomUUID();
@@ -32,7 +32,7 @@ class UserValueMapperTest {
     }
 
     @Test
-    void testDtoToEntity_NullDto() {
+    void testDtoToEntityNullDto() {
         // Act & Assert
         assertThrows(
                 NullPointerException.class,
@@ -42,7 +42,7 @@ class UserValueMapperTest {
     }
 
     @Test
-    void testDtoToEntity_NullId() {
+    void testDtoToEntityNullId() {
         // Arrange
         UserDto userDto = new UserDto();
         userDto.setId(null);
@@ -57,7 +57,7 @@ class UserValueMapperTest {
     }
 
     @Test
-    void testDtoToEntity_NullUsername() {
+    void testDtoToEntityNullUsername() {
         // Arrange
         UserDto userDto = new UserDto();
         userDto.setId(UUID.randomUUID());
@@ -69,7 +69,7 @@ class UserValueMapperTest {
     }
 
     @Test
-    void testDtoToEntity_NullEmail() {
+    void testDtoToEntityNullEmail() {
         // Arrange
         UserDto userDto = new UserDto();
         userDto.setId(UUID.randomUUID());
@@ -82,7 +82,7 @@ class UserValueMapperTest {
     }
 
     @Test
-    void testDtoToEntity_EmptyFields() {
+    void testDtoToEntityEmptyFields() {
         // Arrange
         UserDto userDto = new UserDto();
         userDto.setId(UUID.randomUUID());

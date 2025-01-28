@@ -34,7 +34,7 @@ class SuscriptionServiceImplTest {
     }
 
     @Test
-    void createSuscription_ValidInput_ShouldSendToKafka() {
+    void createSuscriptionValidInputShouldSendToKafka() {
         // Arrange
         SuscriptionDto validDto = new SuscriptionDto();
         validDto.setIdUser("123e4567-e89b-12d3-a456-426614174000");
@@ -55,7 +55,7 @@ class SuscriptionServiceImplTest {
     }
 
     @Test
-    void createSuscription_NullInput_ShouldThrowException() {
+    void createSuscriptionNullInputShouldThrowException() {
         // Arrange
         SuscriptionDto nullDto = null;
 
@@ -69,7 +69,7 @@ class SuscriptionServiceImplTest {
 
 
     @Test
-    void createSuscription_IncompleteInput_ShouldThrowException() {
+    void createSuscriptionIncompleteInputShouldThrowException() {
         // Arrange
         SuscriptionDto incompleteDto = new SuscriptionDto();
         incompleteDto.setIdUser(""); // ID vacío
@@ -85,7 +85,7 @@ class SuscriptionServiceImplTest {
 
 
     @Test
-    void createSuscription_InvalidType_ShouldThrowException() {
+    void createSuscriptionInvalidTypeShouldThrowException() {
         // Arrange
         SuscriptionDto invalidTypeDto = new SuscriptionDto();
         invalidTypeDto.setIdUser("123e4567-e89b-12d3-a456-426614174000");

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SuscriptionKeyMapperTest {
 
     @Test
-    void dtoToEntity_ValidUuid_ShouldReturnValidEntity() {
+    void dtoToEntityValidUuidShouldReturnValidEntity() {
         // Arrange
         String validUuid = UUID.randomUUID().toString();
         SuscriptionDto dto = new SuscriptionDto();
@@ -29,7 +29,7 @@ class SuscriptionKeyMapperTest {
     }
 
     @Test
-    void dtoToEntity_InvalidUuid_ShouldStillMapToEntity() {
+    void dtoToEntityInvalidUuidShouldStillMapToEntity() {
         // Arrange
         String invalidUuid = "not-a-valid-uuid";
         SuscriptionDto dto = new SuscriptionDto();
@@ -46,7 +46,7 @@ class SuscriptionKeyMapperTest {
     }
 
     @Test
-    void dtoToEntity_NullUuid_ShouldThrowException() {
+    void dtoToEntityNullUuidShouldThrowException() {
         // Arrange
         SuscriptionDto dto = new SuscriptionDto();
         dto.setIdUser(null);
@@ -59,7 +59,7 @@ class SuscriptionKeyMapperTest {
     }
 
     @Test
-    void dtoToEntity_EmptyUuid_ShouldReturnEntityWithEmptyIdUser() {
+    void dtoToEntityEmptyUuidShouldReturnEntityWithEmptyIdUser() {
         // Arrange
         SuscriptionDto dto = new SuscriptionDto();
         dto.setIdUser("");

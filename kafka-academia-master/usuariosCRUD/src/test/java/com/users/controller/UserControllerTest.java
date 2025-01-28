@@ -29,7 +29,7 @@ class UserControllerTest {
     }
 
     @Test
-    void createUser_Success() {
+    void createUserSuccess() {
         // Arrange
         UserDto userDto = new UserDto();
         userDto.setId(UUID.randomUUID());
@@ -48,7 +48,7 @@ class UserControllerTest {
     }
 
     @Test
-    void createUser_BadRequest() {
+    void createUserBadRequest() {
         // Arrange
         UserDto userDto = new UserDto(); // Usuario incompleto para provocar un error
         userDto.setUsername("");

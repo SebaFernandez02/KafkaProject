@@ -13,7 +13,7 @@ class UserKeyMapperTest {
     private final UserKeyMapper userKeyMapper = new UserKeyMapper();
 
     @Test
-    void testDtoToEntity_Success() {
+    void testDtoToEntitySuccess() {
         // Arrange
         UserDto userDto = new UserDto();
         UUID userId = UUID.randomUUID();
@@ -27,7 +27,7 @@ class UserKeyMapperTest {
     }
 
     @Test
-    void testDtoToEntity_NullDto() {
+    void testDtoToEntityNullDto() {
         // Act & Assert
         assertThrows(NullPointerException.class,
                 () -> userKeyMapper.dtoToEntity(null),
@@ -36,7 +36,7 @@ class UserKeyMapperTest {
     }
 
     @Test
-    void testDtoToEntity_NullId() {
+    void testDtoToEntityNullId() {
         // Arrange
         UserDto userDto = new UserDto();
         userDto.setId(null);

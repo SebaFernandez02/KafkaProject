@@ -31,7 +31,7 @@ public class ServiceTest {
     }
 
     @Test
-    void testCreateUser_Success() {
+    void testCreateUserSuccess() {
         // Arrange
         UserDto userDto = new UserDto();
         userDto.setUsername("testuser");
@@ -52,7 +52,7 @@ public class ServiceTest {
     }
 
     @Test
-    void testCreateUser_NullUser() {
+    void testCreateUserNullUser() {
         // Act & Assert
         InvalidParameterException exception = assertThrows(
                 InvalidParameterException.class,
@@ -62,7 +62,7 @@ public class ServiceTest {
     }
 
     @Test
-    void testCreateUser_BlankUsername() {
+    void testCreateUserBlankUsername() {
         // Arrange
         UserDto userDto = new UserDto();
         userDto.setUsername("   "); // Username en blanco
@@ -78,7 +78,7 @@ public class ServiceTest {
     }
 
     @Test
-    void testCreateUser_BlankEmail() {
+    void testCreateUserBlankEmail() {
         // Arrange
         UserDto userDto = new UserDto();
         userDto.setUsername("testuser");
@@ -94,7 +94,7 @@ public class ServiceTest {
     }
 
     @Test
-    void testCreateUser_InvalidKafkaSend() {
+    void testCreateUserInvalidKafkaSend() {
         // Arrange
         UserDto userDto = new UserDto();
         userDto.setUsername("testuser");
