@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cf93720e-e8d0-4942-9fc4-6e4715463949" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/dataPython/dashboard/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/java/com/mixbi/Mixbi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/java/com/mixbi/MixbiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/resources/avro/SuscriberKey.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/resources/avro/SuscriberValue.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/resources/avro/SuscriptionsKey.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/resources/avro/SuscriptionsValue.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/resources/avro/UserKey.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/resources/avro/UserValue.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/src/main/java/com/pcs/PcsSuscribersApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/src/main/java/com/pcs/consumer/KafkaLowLevelConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/src/main/java/com/pcs/producer/KafkaLowLevelProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/src/main/resources/avro/SuscriberFinalKey.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/src/main/resources/avro/SuscriberFinalValue.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/src/main/resources/avro/SuscriberKey.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/src/main/resources/avro/SuscriberValue.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/src/test/java/com/pcs/KafkaLowLevelConsumerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PCSsuscriptores/src/test/java/com/pcs/KafkaLowLevelProducerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/main/java/com/aggregator/AgregadorSuscripcionesApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/main/java/com/aggregator/kafkaConsumer/Aggregator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/main/java/com/aggregator/kafkaConsumer/AgregadorSuscripciones.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/main/java/com/aggregator/kafkaConsumer/Initializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/main/resources/avro/SuscriptionKey.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/main/resources/avro/SuscriptionValue.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/main/resources/avro/SuscriptionsKey.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/main/resources/avro/SuscriptionsValue.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/test/java/com/aggregator/AggregatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agregadorSuscripciones/src/test/java/com/aggregator/InitializerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/beats/filebeat.config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/kibana/dashboard.ndjson" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/kibana/index-pattern.ndjson" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/logstash/app-logs.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/logstash/templates/template.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataPython/dashboard/dashboard.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataPython/script/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataPython/script/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataPython/script/script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion-academia.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grafana/datasource.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log_producer/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log_producer/producer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nohup.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/reporte_areas.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prometheus/prometheus.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/java/com/suscriptions/SuscripcionesCRUDApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/java/com/suscriptions/controller/SuscriptionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/java/com/suscriptions/dto/SuscriptionDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/java/com/suscriptions/dto/SuscriptionType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/java/com/suscriptions/service/SuscriptionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/java/com/suscriptions/service/impl/SuscriptionServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/java/com/suscriptions/service/mapper/Mapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/java/com/suscriptions/service/mapper/SuscriptionKeyMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/java/com/suscriptions/service/mapper/SuscriptionValueMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/resources/avro/SuscriptionKey.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/main/resources/avro/SuscriptionValue.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/test/java/com/suscriptions/controller/SuscriptionControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/test/java/com/suscriptions/service/SuscriptionServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/test/java/com/suscriptions/service/mapper/SuscriptionKeyMapperTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscripcionesCRUD/src/test/java/com/suscriptions/service/mapper/SuscriptionValueMapperTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/java/com/suscribers/SuscriptoresGetApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/java/com/suscribers/controller/SuscribersController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/java/com/suscribers/dto/SuscriberDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/java/com/suscribers/dto/SuscriptionType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/java/com/suscribers/kafkaConsumer/LowLevelConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/java/com/suscribers/kafkaConsumer/mapper/Mapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/java/com/suscribers/kafkaConsumer/mapper/SuscriberMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/java/com/suscribers/model/Suscriber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/java/com/suscribers/repository/SuscribersRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/java/com/suscribers/service/SuscriberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/java/com/suscribers/service/impl/SuscriberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/resources/avro/SuscriberFinalKey.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/main/resources/avro/SuscriberFinalValue.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/suscriptoresGET/src/test/java/com/suscribers/test/SuscriberServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/sonar/.sonar_lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/sonar/.sonartmp/scanner-report5924433669692234462.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/sonar/report-task.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/java/com/users/UsuariosCrudApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/java/com/users/config/Swagger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/java/com/users/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/java/com/users/dto/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/java/com/users/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/java/com/users/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/java/com/users/service/mapper/Mapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/java/com/users/service/mapper/UserKeyMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/java/com/users/service/mapper/UserValueMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/resources/avro/UserKey.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/main/resources/avro/UserValue.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/test/java/com/users/controller/UserControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/test/java/com/users/service/ServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/test/java/com/users/service/mapper/UserKeyMapperTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosCRUD/src/test/java/com/users/service/mapper/UserValueMapperTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="1" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectId" id="2rcTS5dLub9dA3JLaGpdm8OVBPH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/SebastianAgustinFern/OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L/Escritorio/Projects/KafkaProject/pom.xml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\dataPython\dashboard" />
+      <recent name="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\dataPython\script" />
+      <recent name="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\agregadorSuscripciones\src\main\resources" />
+      <recent name="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\MixbiUsuarioSuscripcion\src\main\resources" />
+      <recent name="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\PCSsuscriptores\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\dataPython\dashboard" />
+      <recent name="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\dataPython\script" />
+      <recent name="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\dataPython" />
+      <recent name="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master" />
+      <recent name="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\log_producer" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.usuarios" />
+      <recent name="com.usuarios.service" />
+      <recent name="com.usuarios.dto" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.usuarios.dto" />
+      <recent name="com.usuarios.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.dashboard">
+    <configuration name="All in suscriptoresGET" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="suscriptoresGET" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in usuariosCRUD" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="usuariosCRUD" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="kafka-academia-master" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="kafka-academia-master" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dashboard" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gestion-academia" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataPython" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\dataPython\dashboard\dashboard.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for scriptTest.TestScript" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="gestion-academia" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\venv\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.11 (kafka-academia-master)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataPython" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;scriptTest.TestScript&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in C:/Users/SebastianAgustinFern/OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L/Escritorio/Projects/KafkaProject/kafka-academia-master/dataPython/scriptTest.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="gestion-academia" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\SebastianAgustinFern\OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L\Escritorio\Projects\KafkaProject\kafka-academia-master\venv\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.11 (kafka-academia-master)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dataPython" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/dataPython/scriptTest.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.dashboard" />
+        <item itemvalue="Python tests.Python tests for scriptTest.TestScript" />
+        <item itemvalue="Python tests.Python tests in C:/Users/SebastianAgustinFern/OneDrive - HIBERUS SISTEMAS INFORMATICOS S.L/Escritorio/Projects/KafkaProject/kafka-academia-master/dataPython/scriptTest.py" />
+        <item itemvalue="JUnit.All in usuariosCRUD" />
+        <item itemvalue="JUnit.All in suscriptoresGET" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf93720e-e8d0-4942-9fc4-6e4715463949" name="Changes" comment="" />
+      <created>1736857361683</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736857361683</updated>
+    </task>
+    <task id="LOCAL-00001" summary="improve methods">
+      <created>1737123991314</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737123991314</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix avros">
+      <created>1737398401850</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737398401850</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="improve methods" />
+    <MESSAGE value="fix avros" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix avros" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/kafka_academia_master$All_in_gestion_academia.ic" NAME="All in gestion-academia Coverage Results" MODIFIED="1737386788453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$All_in_usuariosCRUD.ic" NAME="All in usuariosCRUD Coverage Results" MODIFIED="1737387617792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$All_in_PCSsuscriptores__1_.ic" NAME="All in PCSsuscriptores (1) Coverage Results" MODIFIED="1737388958186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$All_in_agregadorSuscripciones__1_.ic" NAME="All in agregadorSuscripciones (1) Coverage Results" MODIFIED="1737389009024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$ServiceTest.ic" NAME="ServiceTest Coverage Results" MODIFIED="1737131154482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.usuarios.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/kafka_academia_master$java_in_usuariosCRUD.ic" NAME="java in usuariosCRUD Coverage Results" MODIFIED="1737135105817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$Whole_project.ic" NAME="Whole project Coverage Results" MODIFIED="1737386852287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$All_in_agregadorSuscripciones.ic" NAME="All in agregadorSuscripciones Coverage Results" MODIFIED="1737386865249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$All_in_PCSsuscriptores.ic" NAME="All in PCSsuscriptores Coverage Results" MODIFIED="1737386919927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$All_in_suscriptoresGET__1_.ic" NAME="All in suscriptoresGET (1) Coverage Results" MODIFIED="1737388702229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$All_in_suscripcionesCRUD.ic" NAME="All in suscripcionesCRUD Coverage Results" MODIFIED="1737388910270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$All_in_suscriptoresGET.ic" NAME="All in suscriptoresGET Coverage Results" MODIFIED="1737388322167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$java_in_suscripcionesCRUD.ic" NAME="java in suscripcionesCRUD Coverage Results" MODIFIED="1737137993313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/kafka_academia_master$All_in_usuariosCRUD__2_.ic" NAME="All in usuariosCRUD (2) Coverage Results" MODIFIED="1737388882207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+*.pyo
+.git/
+reporte_areas.csv
