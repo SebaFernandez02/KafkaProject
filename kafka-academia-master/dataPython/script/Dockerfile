@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copiar la carpeta `dataPython` al contenedor
-COPY ./dataPython /app
+COPY ./dataPython/script /app
 
 # Instalar las dependencias necesarias
 RUN pip install requests

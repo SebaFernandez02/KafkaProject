@@ -27,7 +27,7 @@
 		<sonar.projectKey>Kafka</sonar.projectKey>
 		<sonar.host.url>http://localhost:9000</sonar.host.url> <!-- URL de tu servidor SonarQube -->
 		<sonar.sources>src/main/java</sonar.sources> <!-- Directorio donde están tus fuentes -->
-		<sonar.toker>sqp_54fbfb37b23140133fad748514c14c2b1fe353d6</sonar.toker>
+		<sonar.token>sqp_54fbfb37b23140133fad748514c14c2b1fe353d6</sonar.token>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>123Cuatro...</sonar.password>
 		<sonar.exclusions>usuariosCRUD/src/main/java/com.users.config, usuariosCRUD/src/main/java/com.users.dto, usuariosCRUD/src/main/java/com.users.UsuariosCrudApplication,

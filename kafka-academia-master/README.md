@@ -40,6 +40,7 @@ Este sistema está desarrollado utilizando las siguientes tecnologías:
    - Sonar: http://localhost:9000/
    - Grafana: http://localhost:3000/
    - Redpanda: http://localhost:8080/
+   - python-dashboard: http://localhost:8050/
 
 NOTA: Al levantar todos los contenedores se van a auto crear los topics, 
 este proyecto es solo una demo ya que se deberían configurar.

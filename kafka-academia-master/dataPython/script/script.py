@@ -103,5 +103,6 @@ def main():
 
 
 if __name__ == "__main__":
+    time.sleep(15)
     logging.info("Script de estadísticas iniciado.")
     main()
