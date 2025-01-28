@@ -13,10 +13,10 @@ logging.basicConfig(
 )
 
 # URL de tu API (cambiar por la real)
-BASE_URL = "http://localhost:8092/suscribers"
+BASE_URL = "http://suscriptores-get:8080/suscribers"
 
 
-def save_to_csv(subscription_counts, totals, filename="reporte_areas.csv"):
+def save_to_csv(subscription_counts, totals, filename="/app/output/reporte_areas.csv"):
     """Guarda las estadísticas de suscripciones en un archivo CSV."""
     try:
         logging.info("Guardando las estadísticas en el archivo CSV...")
@@ -95,7 +95,6 @@ def generate_statistics():
 
 
 def main():
-    """Menú principal."""
     while True:
         logging.info("Iniciando generación de estadísticas...")
         generate_statistics()

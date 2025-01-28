@@ -280,7 +280,20 @@ services:
         networks:
             - suscribers-network
 
-
+    python-script:
+        image: python-script
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: python-script
+        volumes:
+            - ./output:/app/output
+        working_dir: /app
+        depends_on:
+            -   suscriptores-get
+        networks:
+            - suscribers-network
+        restart: always
 
 #    app:
 #        build:

@@ -16,7 +16,7 @@ public class Aggregator implements org.apache.kafka.streams.kstream.Aggregator<S
         suscriptionsValue = SuscriptionsValue.newBuilder()
                 .setSuscriptions(suscriptionsValue.getSuscriptions()
                         .stream()
-                        .filter(t -> !suscriptionValue.getName().equals(t.getType()))
+                        .filter(t -> !suscriptionValue.getName().toString().equals(t.getType()))
                         .collect(Collectors.toList())).build();
 
 
