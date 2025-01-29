@@ -34,9 +34,9 @@ Este sistema está desarrollado utilizando las siguientes tecnologías:
 1. Ejecutar mvn clean install en la carpeta raíz del proyecto
 2. Ejecutar docker-compose up --build para arrancar los contenedores
 3. Prueba de aplicación en:
-   - Creación de profesores: http://localhost:8090/swagger-ui/index.html
-   - Creación de alumnos: http://localhost:8091/swagger-ui/index.html
-   - Consulta de clases: http://localhost:8096/swagger-ui/index.html
+   - Creación de Usuarios: http://localhost:8090/swagger-ui/index.html
+   - Creación de Suscripciones: http://localhost:8091/swagger-ui/index.html
+   - Consulta de Suscriptores: http://localhost:8092/swagger-ui/index.html
    - Sonar: http://localhost:9000/
    - Grafana: http://localhost:3000/
    - Redpanda: http://localhost:8080/
