@@ -1,4 +1,4 @@
-package com.users.config;
+package com.suscriptions.config;
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -18,8 +18,8 @@ public class Swagger {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API de registro de Usuarios")
-                        .description("Documentación de la API para el sistema de registro de usuarios")
+                        .title("API de registro de sucripciones")
+                        .description("Documentación de la API para el sistema de registro de suscripciones")
                         .version("v1.0.0")
                         .contact(new Contact()
                                 .name("Sebastián Fernández")
@@ -30,7 +30,7 @@ public class Swagger {
                                 .url("https://www.apache.org/licenses/LICENSE-2.0.html"))
                 )
                 .servers(List.of(
-                        new Server().url("http://localhost:8090").description("Servidor Local")
+                        new Server().url("http://localhost:8091").description("Servidor Local")
                 ))
                 .externalDocs(new ExternalDocumentation()
                         .description("Documentación Completa")

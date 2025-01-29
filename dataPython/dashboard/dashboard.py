@@ -6,7 +6,7 @@ import dash
 from dash import dcc, html, Input, Output
 
 # Ruta del archivo CSV
-CSV_FILE_PATH = "../output/reporte_areas.csv"
+CSV_FILE_PATH = "../../output/reporte_areas.csv"
 
 
 # Cargar y procesar datos
