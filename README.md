@@ -33,6 +33,7 @@ Este sistema está desarrollado utilizando las siguientes tecnologías:
 ## Ejecución de la aplicación
 1. Ejecutar mvn clean install en la carpeta raíz del proyecto
 2. Ejecutar docker-compose up --build para arrancar los contenedores
+3. En la ubicacion **/dataPython/dashboard** ejecutar el archivo dashboard.py
 3. Prueba de aplicación en:
    - Creación de Usuarios: http://localhost:8090/swagger-ui/index.html
    - Creación de Suscripciones: http://localhost:8091/swagger-ui/index.html
