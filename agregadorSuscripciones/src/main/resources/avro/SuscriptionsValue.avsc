@@ -15,6 +15,10 @@
             {
               "name": "type",
               "type": "string"
+            },
+            {
+              "name": "date",
+              "type": "string"
             }
           ]
         }

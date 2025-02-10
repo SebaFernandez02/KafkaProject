@@ -2,14 +2,16 @@ package com.suscribers.service.impl;
 
 import com.suscribers.dto.SuscriberDto;
 import com.suscribers.model.Suscriber;
-import com.suscribers.repository.SuscribersRepository;
+import com.suscribers.repository.SuscribersMongoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityNotFoundException;
+import javax.ws.rs.NotFoundException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -18,8 +20,9 @@ import java.util.stream.Collectors;
 @Slf4j
 public class SuscriberService implements com.suscribers.service.SuscriberService {
 
+
     @Autowired
-    private SuscribersRepository suscribersRepository;
+    private SuscribersMongoRepository mongoRepository;
 
 
 
@@ -33,11 +36,11 @@ public class SuscriberService implements com.suscribers.service.SuscriberService
                 .username(dto.getUsername())
                 .email(dto.getEmail())
                 .suscriptions(dto.getSuscriptions())
-                .date(Timestamp.valueOf(dto.getDate()))
+                .date(dto.getDate())
                 .build();
 
         log.info("[ServiceSuscriber] Guardando suscriptor en BBDD");
-        suscribersRepository.save(suscriber);
+        mongoRepository.save(suscriber);
         log.info("Suscriptor guardado en BBDD");
     }
 
@@ -45,15 +48,29 @@ public class SuscriberService implements com.suscribers.service.SuscriberService
     public SuscriberDto getSuscriber(String id) {
         log.info("[ServiceSuscriber] Obteniendo suscriptor desde la BBDD");
 
-        Suscriber suscriber = suscribersRepository.findById(UUID.fromString(id)).orElseThrow(() -> new EntityNotFoundException("No se encontro un suscriptor con el id: " + id));
+        Suscriber suscriber = mongoRepository.findById(UUID.fromString(id)).orElseThrow(() -> new NotFoundException("no existe un usuario con id: " + id));
 
-        return suscriber.toDto();
+        return suscriber == null ? null : suscriber.toDto();
     }
 
     @Override
     public List<SuscriberDto> getSuscribers() {
 
-        return suscribersRepository.findAll().stream().map(Suscriber::toDto).collect(Collectors.toList());
+        log.info("[ServiceSuscriber] Obteniendo suscriptores desde la BBDD");
+
+        return mongoRepository.findAll().stream().map(Suscriber::toDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<SuscriberDto> getActiveSuscribers() {
+        List<SuscriberDto> suscribers = mongoRepository.findAll()
+                .stream()
+                .filter(x -> x.getDate().getDayOfYear() == (LocalDateTime.now().getDayOfYear()))
+                .map(Suscriber::toDto)
+                .collect(Collectors.toList());
+
+        suscribers.forEach(x -> x.setSuscriptions(new ArrayList<>(x.getSuscriptions().stream().filter(y -> LocalDateTime.parse(y.getDate()).getDayOfYear() == LocalDateTime.now().getDayOfYear()).collect(Collectors.toList()))));
+        return suscribers;
     }
 
 

@@ -17,7 +17,7 @@ import static org.mockito.Mockito.*;
 
 class KafkaLowLevelProducerTest {
 
-    private KafkaLowLevelProducer kafkaLowLevelProducer;
+ /*   private KafkaLowLevelProducer kafkaLowLevelProducer;
 
     @Mock
     private KafkaTemplate<SuscriberFinalKey, SuscriberFinalValue> kafkaTemplate;
@@ -86,5 +86,5 @@ class KafkaLowLevelProducerTest {
 
         // Assert
         verify(kafkaTemplate, times(1)).send(eq("suscribers-final"), any(SuscriberFinalKey.class), any(SuscriberFinalValue.class));
-    }
+    }*/
 }

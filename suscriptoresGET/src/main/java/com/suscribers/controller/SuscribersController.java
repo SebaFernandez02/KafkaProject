@@ -30,6 +30,7 @@ public class SuscribersController {
             return new ResponseEntity<>(suscriberDtos, HttpStatus.OK);
 
         }catch (Exception e){
+            log.error("Error al obtener suscriptores", e);
             log.info("catch");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -49,5 +50,15 @@ public class SuscribersController {
         }
     }
 
-
+    @GetMapping("/activeSuscribers")
+    public ResponseEntity<List<SuscriberDto>> activeSuscribers() {
+        try {
+            log.info("try");
+            List<SuscriberDto> suscriberDtos = suscriberService.getActiveSuscribers();
+            log.info("tengo la lista");
+            return new ResponseEntity<>(suscriberDtos, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }

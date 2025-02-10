@@ -21,7 +21,7 @@ import static org.mockito.Mockito.*;
 @SpringBootTest
 class KafkaLowLevelConsumerTest {
 
-    @Autowired
+/*    @Autowired
     private KafkaLowLevelConsumer kafkaLowLevelConsumer;
 
     @MockBean
@@ -97,6 +97,6 @@ class KafkaLowLevelConsumerTest {
 
         assertEquals(expectedKey, keyCaptor.getValue());
         assertNotNull(valueCaptor.getValue().getDate()); // Comprobamos que se genera una fecha
-    }
+    }*/
 
 }

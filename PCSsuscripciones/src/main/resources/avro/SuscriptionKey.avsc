@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "namespace": "com.suscribers.avro",
+  "name": "SuscriptionKey",
+  "fields": [
+    {
+      "name" : "idUser",
+      "type": "string"
+    }
+  ]
+}

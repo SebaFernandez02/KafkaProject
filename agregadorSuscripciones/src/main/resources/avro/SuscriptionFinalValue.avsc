@@ -1,0 +1,31 @@
+{
+  "type" : "record",
+  "namespace": "com.suscribers.avro",
+  "name": "SuscriptionFinalValue",
+  "fields": [
+    {
+      "name": "idUser",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": {
+        "type": "enum",
+        "name": "Tipo",
+        "namespace": "com.suscribers.avro",
+        "symbols": [
+          "ACUATICO",
+          "AEREO",
+          "KARTING",
+          "LASER",
+          "TIROLESA",
+          "INFANTIL"
+        ]
+      }
+    },
+    {
+      "name": "date",
+      "type": "string"
+    }
+  ]
+}

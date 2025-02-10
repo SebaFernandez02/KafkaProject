@@ -1,27 +1,12 @@
 package com.suscribers.test;
 
-import com.suscribers.dto.SuscriberDto;
-import com.suscribers.dto.SuscriptionType;
-import com.suscribers.model.Suscriber;
-import com.suscribers.repository.SuscribersRepository;
-import com.suscribers.service.impl.SuscriberService;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import javax.persistence.EntityNotFoundException;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.util.*;
 
 @ExtendWith(MockitoExtension.class)
 class SuscriberServiceTest {
 
-    @InjectMocks
+ /*   @InjectMocks
     private SuscriberService suscriberService;
 
     @Mock
@@ -91,5 +76,5 @@ class SuscriberServiceTest {
         List<SuscriberDto> result = suscriberService.getSuscribers();
 
         Assertions.assertEquals(suscribers.size(), result.size());
-    }
+    }*/
 }

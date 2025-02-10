@@ -1,46 +1,45 @@
 package com.suscribers.model;
 
 import com.suscribers.dto.SuscriberDto;
+import com.suscribers.dto.SuscriptionFinal;
 import com.suscribers.dto.SuscriptionType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 
 @Data
-@Slf4j
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity
-@Table(name = "suscribers")
+@Slf4j
+
+@Document(collection = "suscriptores")
 public class Suscriber {
 
-    @Id
-    @Column(name = "id")
+    @MongoId
     private UUID id;
 
-    @Column(name = "username")
     private String username;
 
-    @Column(name = "email")
     private String email;
 
-    @Column(name = "suscriptions")
-    private ArrayList<SuscriptionType> suscriptions;
 
-    @Column(name = "date")
-    private Timestamp date;
+    private List<SuscriptionFinal> suscriptions;
+
+    private LocalDateTime date;
 
     public SuscriberDto toDto(){
         log.info("toDto");
@@ -49,7 +48,7 @@ public class Suscriber {
                 .username(this.getUsername())
                 .email(this.getEmail())
                 .suscriptions(this.getSuscriptions())
-                .date(this.getDate().toLocalDateTime())
+                .date(this.getDate())
                 .build();
     }
 }

@@ -7,18 +7,26 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="suscripcionesCRUD" />
-        <module name="agregadorSuscripciones" />
         <module name="suscriptoresGET" />
-        <module name="usuariosCRUD" />
         <module name="MixbiUsuarioSuscripcion" />
         <module name="PCSsuscriptores" />
+        <module name="agregadorSuscripciones" />
+        <module name="usuariosCRUD" />
+        <module name="PCSsuscripciones" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="PCSsuscriptores (1)" target="11" />
+      <module name="PCSsuscriptores (2)" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="MixbiUsuarioSuscripcion" options="-parameters" />
+      <module name="PCSsuscripciones" options="-parameters" />
       <module name="PCSsuscriptores" options="-parameters" />
+      <module name="PCSsuscriptores (1)" options="-parameters" />
+      <module name="PCSsuscriptores (2)" options="-parameters" />
       <module name="agregadorSuscripciones" options="-parameters" />
       <module name="suscripcionesCRUD" options="-parameters" />
       <module name="suscriptoresGET" options="-parameters" />

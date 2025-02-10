@@ -11,4 +11,6 @@ public interface SuscriberService {
     SuscriberDto getSuscriber(String id);
 
     List<SuscriberDto> getSuscribers();
+
+    List<SuscriberDto> getActiveSuscribers();
 }

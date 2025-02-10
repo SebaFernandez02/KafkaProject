@@ -3,17 +3,25 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MixbiUsuarioSuscripcion/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MixbiUsuarioSuscripcion/target/generated-sources/avro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PCSsuscripciones/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PCSsuscripciones/target/generated-sources/avro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/PCSsuscriptores/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/PCSsuscriptores/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PCSsuscriptores/target/generated-sources/avro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/agregadorSuscripciones/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/agregadorSuscripciones/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/agregadorSuscripciones/target/generated-sources/avro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/suscripcionesCRUD/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/suscripcionesCRUD/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/suscripcionesCRUD/target/generated-sources/avro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/suscriptoresGET/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/suscriptoresGET/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/suscriptoresGET/target/generated-sources/avro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/usuariosCRUD/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/usuariosCRUD/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/usuariosCRUD/target/generated-sources/avro" charset="UTF-8" />
   </component>
 </project>

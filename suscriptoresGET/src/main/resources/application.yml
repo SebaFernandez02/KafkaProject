@@ -14,13 +14,7 @@ spring:
         key.deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
         value.deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
         schema.registry.url: http://${schema-registry:localhost}:8081
-  datasource:
-    url: jdbc:postgresql://suscriptores-get-db:5432/suscribers
-    username: postgres
-    password: postgres
-
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: false
-    hibernate:
-      ddl-auto: update
+  data:
+    mongodb:
+      uri: mongodb+srv://sebitafx:iHT8XGkxHXo2DrlP@sebalandia.q8mkp.mongodb.net/suscriptores?retryWrites=true&w=majority
+      database: suscriptores

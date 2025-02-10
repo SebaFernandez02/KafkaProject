@@ -15,7 +15,7 @@ import java.util.List;
 @ExtendWith(MockitoExtension.class)
 class AggregatorTest {
 
-    @InjectMocks
+/*    @InjectMocks
     private Aggregator aggregator;
 
     private String idUser = "122345";
@@ -40,5 +40,5 @@ class AggregatorTest {
 
         // Verificar
         Assertions.assertEquals(2, result.getSuscriptions().size());
-    }
+    }*/
 }

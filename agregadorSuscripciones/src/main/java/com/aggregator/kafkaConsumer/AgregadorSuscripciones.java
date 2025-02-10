@@ -23,7 +23,7 @@ public class AgregadorSuscripciones {
 
 
     @Bean
-    public Function<KStream<SuscriptionKey, SuscriptionValue>, KStream<SuscriptionsKey, SuscriptionsValue>> aggregateMessages() {
+    public Function<KStream<SuscriptionFinalKey, SuscriptionFinalValue>, KStream<SuscriptionsKey, SuscriptionsValue>> aggregateMessages() {
         return suscriptionsStream -> suscriptionsStream
                 .peek((k, v) -> log.info("[aggregateMessages] Received message with key: {} and value {}", k, v))
                 .selectKey((k, v) -> SuscriptionsKey.newBuilder().setIdUser(k.getIdUser()).build())

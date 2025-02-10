@@ -4,6 +4,7 @@ import com.suscribers.avro.SuscriberFinalKey;
 import com.suscribers.avro.SuscriberFinalValue;
 import com.suscribers.avro.Suscription;
 import com.suscribers.dto.SuscriberDto;
+import com.suscribers.dto.SuscriptionFinal;
 import com.suscribers.dto.SuscriptionType;
 
 import java.time.LocalDateTime;
@@ -16,14 +17,15 @@ public class SuscriberMapper implements Mapper<SuscriberFinalKey, SuscriberFinal
     @Override
     public SuscriberDto toDto(SuscriberFinalKey key, SuscriberFinalValue value) {
 
-        SuscriberDto dto = SuscriberDto.builder()
+        ArrayList<Suscription> suscriptions = new ArrayList<>(value.getSuscriptions());
+
+        return SuscriberDto.builder()
                 .id(key.getId())
                 .username(value.getUsername())
                 .email(value.getEmail())
-                .suscriptions(parse(value.getSuscriptions()))
+                .suscriptions(suscriptionToDto(value.getSuscriptions()))
                 .date(LocalDateTime.parse(value.getDate()))
                 .build();
-        return dto;
     }
 
     private ArrayList<SuscriptionType> parse(List<Suscription> suscriptions){
@@ -33,5 +35,14 @@ public class SuscriberMapper implements Mapper<SuscriberFinalKey, SuscriberFinal
             suscriptionTypes.add(SuscriptionType.valueOf(suscription.getType()));
         }
         return suscriptionTypes;
+    }
+
+    private List<SuscriptionFinal> suscriptionToDto(List<Suscription> suscriptions){
+        List<SuscriptionFinal> suscriptionFinals = new ArrayList<>();
+
+        for (Suscription suscription : suscriptions){
+            suscriptionFinals.add(SuscriptionFinal.builder().type(suscription.getType()).date(suscription.getDate()).build());
+        }
+        return suscriptionFinals;
     }
 }
