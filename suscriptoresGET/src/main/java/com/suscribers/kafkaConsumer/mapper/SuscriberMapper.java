@@ -6,7 +6,6 @@ import com.suscribers.avro.Suscription;
 import com.suscribers.dto.SuscriberDto;
 import com.suscribers.dto.SuscriptionFinal;
 import com.suscribers.dto.SuscriptionType;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

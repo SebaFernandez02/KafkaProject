@@ -1,12 +1,11 @@
 package com.aggregator.kafkaConsumer;
 
-
 import com.suscribers.avro.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
+
 @Slf4j
 @Component
 public class Aggregator implements org.apache.kafka.streams.kstream.Aggregator<SuscriptionsKey, SuscriptionFinalValue, SuscriptionsValue> {

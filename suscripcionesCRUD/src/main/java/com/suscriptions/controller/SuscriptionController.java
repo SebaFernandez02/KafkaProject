@@ -3,7 +3,6 @@ package com.suscriptions.controller;
 import com.suscriptions.dto.SuscriptionDto;
 import com.suscriptions.service.SuscriptionService;
 import javax.validation.Valid;
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

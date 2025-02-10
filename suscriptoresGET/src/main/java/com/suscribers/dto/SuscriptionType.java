@@ -1,7 +1,6 @@
 package com.suscribers.dto;
 
 import lombok.extern.slf4j.Slf4j;
-
 import java.security.InvalidParameterException;
 import java.util.Locale;
 

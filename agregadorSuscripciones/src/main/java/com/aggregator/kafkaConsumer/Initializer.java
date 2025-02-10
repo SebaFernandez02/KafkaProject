@@ -3,7 +3,6 @@ package com.aggregator.kafkaConsumer;
 import com.suscribers.avro.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 
 @Slf4j

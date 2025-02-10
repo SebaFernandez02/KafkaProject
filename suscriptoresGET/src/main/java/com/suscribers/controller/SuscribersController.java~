@@ -30,6 +30,7 @@ public class SuscribersController {
             return new ResponseEntity<>(suscriberDtos, HttpStatus.OK);
 
         }catch (Exception e){
+            log.error("Error al obtener suscriptores", e);
             log.info("catch");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
