@@ -36,7 +36,6 @@ public class Suscriber {
 
     private String email;
 
-
     private List<SuscriptionFinal> suscriptions;
 
     private LocalDateTime date;

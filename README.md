@@ -48,4 +48,6 @@ este proyecto es solo una demo ya que se deberían configurar.
 
 NOTA2: El reporte se encuentra en la carpeta output del proyecto y se actualiza cada 2min.
 
+**KAFKA, MONGO, DOCKER, SPRINGBOOT, PYTHON, POSTGRESQL, JPA, MICROSERVICES**
+
 Link al repo: https://gitlabdes.hiberus.com/safernandez/kafkaproject
