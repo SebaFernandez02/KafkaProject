@@ -29,6 +29,7 @@ Este sistema está desarrollado utilizando las siguientes tecnologías:
 - **Generación de Reportes en CSV**:  
   Un script en Python recolecta los datos de las suscripciones desde un microservicio y genera reportes en formato CSV
 
+![Diagrama de la solucion](./kafka.png)
 
 ## Ejecución de la aplicación
 1. Ejecutar mvn clean install en la carpeta raíz del proyecto
