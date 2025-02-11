@@ -16,6 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="gestion-academia" target="11" />
       <module name="PCSsuscriptores (1)" target="11" />
       <module name="PCSsuscriptores (2)" target="11" />
     </bytecodeTargetLevel>

@@ -99,9 +99,12 @@ services:
         restart: always
         ports:
             - "8090:8080"
+        depends_on:
+            - usuarios-db
         environment:
             - "kafka=kafka"
             - "schema-registry=schema-registry"
+            - "usuarios-db=usuarios-db"
         healthcheck:
             test: [ "CMD-SHELL", "curl -f http://localhost:8082/actuator/health || exit 1" ]
             interval: 10s
@@ -135,14 +138,13 @@ services:
         build: ./suscriptoresGET
         container_name: suscriptores-get
         restart: always
-        depends_on:
-        - suscriptores-get-db
         ports:
             - "8092:8080"
+        depends_on:
+            - pcs
         environment:
             - "kafka=kafka"
             - "schema-registry=schema-registry"
-            - "suscriptores-get-db=suscriptores-get-db"
         healthcheck:
             test: [ "CMD-SHELL", "curl -f http://localhost:8082/actuator/health || exit 1" ]
             interval: 10s
@@ -159,6 +161,28 @@ services:
         restart: always
         ports:
             - "8093:8080"
+        depends_on:
+            - mixbi
+        environment:
+            - "kafka=kafka"
+            - "schema-registry=schema-registry"
+        healthcheck:
+            test: [ "CMD-SHELL", "curl -f http://localhost:8082/actuator/health || exit 1" ]
+            interval: 10s
+            timeout: 5s
+            retries: 3
+            start_period: 30s
+        networks:
+            - suscribers-network
+
+    pcs-suscripciones:
+        build: ./PCSsuscripciones
+        container_name: pcs-suscripciones
+        restart: always
+        ports:
+            - "8096:8080"
+        depends_on:
+            - sucripciones-crud
         environment:
             - "kafka=kafka"
             - "schema-registry=schema-registry"
@@ -178,6 +202,8 @@ services:
         restart: always
         ports:
             - "8094:8080"
+        depends_on:
+            - pcs-suscripciones
         environment:
             - "kafka=kafka"
             - "schema-registry=schema-registry"
@@ -197,6 +223,9 @@ services:
         restart: always
         ports:
             - "8095:8080"
+        depends_on:
+            - agregador-suscripciones
+            - usuarios-crud
         environment:
             - "kafka=kafka"
             - "schema-registry=schema-registry"
@@ -212,16 +241,16 @@ services:
 
 
 
-    suscriptores-get-db:
+    usuarios-db:
         image: postgres:14.1-alpine
-        container_name: suscriptores-get-db
+        container_name: usuarios-db
         restart: always
         environment:
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=postgres
-            - POSTGRES_DB=suscribers
+            - POSTGRES_DB=users
         ports:
-            - "5432:5432"
+            - "5436:5432"
         volumes:
             - data:/var/lib/postgresql/data
         networks:

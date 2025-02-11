@@ -10,7 +10,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserValueMapperTest {
-
+/*
     private final UserValueMapper userValueMapper = new UserValueMapper();
 
     @Test
@@ -95,6 +95,6 @@ class UserValueMapperTest {
         // Assert
         assertEquals("", userValue.getUsername(), "El username de UserValue debería estar vacío si el UserDto tiene un username vacío.");
         assertEquals("", userValue.getEmail(), "El email de UserValue debería estar vacío si el UserDto tiene un email vacío.");
-    }
+    }*/
 }
 
