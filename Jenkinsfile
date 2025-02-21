@@ -1,12 +1,27 @@
 pipeline {
-    agent any  // Usa cualquier agente disponible, puede ser un nodo Linux
+    agent any
+
+    environment {
+        MAVEN_HOME = 'C:/Program Files/apache-maven-3.8.8' // Ajusta esta ruta si tu Maven está en una ubicación diferente
+        DOCKER_HOME = '/usr/local/bin/docker' // Ajusta la ruta de Docker si es necesario
+    }
 
     stages {
-
-        stage('Levantar Contenedores') {
+        stage('Build with Maven') {
             steps {
                 script {
-                    echo "Levantando los contenedores con Docker Compose..."
+                    echo 'Ejecutando mvn clean install...'
+                    // Ejecuta el comando mvn clean install en la carpeta raíz del proyecto
+                    sh 'mvn clean install'
+                }
+            }
+        }
+
+        stage('Levantar Contenedores Docker') {
+            steps {
+                script {
+                    echo 'Levantando los contenedores con Docker Compose...'
+                    // Ejecuta el comando docker-compose up --build en el directorio donde se encuentra el archivo docker-compose.yml
                     sh 'docker-compose up --build -d'
                 }
             }
@@ -15,8 +30,9 @@ pipeline {
         stage('Ejecutar Dashboard Python') {
             steps {
                 script {
-                    echo "Ejecutando el archivo dashboard.py..."
-                    sh "python3 dataPython/dashboard/dashboard.py"
+                    echo 'Ejecutando el archivo dashboard.py...'
+                    // Ejecuta el archivo dashboard.py en la ubicación /dataPython/dashboard
+                    sh 'python3 /dataPython/dashboard/dashboard.py'
                 }
             }
         }
@@ -24,10 +40,13 @@ pipeline {
 
     post {
         always {
-            echo "Pipeline terminado"
+            echo 'Pipeline terminada.'
+        }
+        success {
+            echo 'Pipeline ejecutada con éxito.'
         }
         failure {
-            echo "Algo salió mal en el pipeline"
+            echo 'Algo salió mal en la ejecución de la pipeline.'
         }
     }
 }
