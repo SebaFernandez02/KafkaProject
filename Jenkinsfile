@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3.8.4-openjdk-11'  // Usamos una imagen que tiene Maven y OpenJDK 11
-            args '-v /var/jenkins_home:/var/jenkins_home'  // Configurar volúmenes si es necesario
-        }
-    }
+    agent any
 
     environment {
         DATA_PYTHON_PATH = "dataPython/dashboard"
