@@ -54,4 +54,46 @@ public class UserController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping("/getUser/{id}")
+    public ResponseEntity<UserDto> getUser(@PathVariable String id){
+        try {
+            UserDto user = userService.getUser(id);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/getUserByEmail")
+    public ResponseEntity<UserDto> getUserByEmail(@RequestParam String email){
+        try {
+            UserDto user = userService.getUserByEmail(email);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping("/putUser")
+    public ResponseEntity<UserDto> putUser(@Valid @RequestBody UserDto user){
+        try {
+            userService.modifyUser(user);
+            return ResponseEntity.ok(user);
+
+        }catch (Exception e){
+
+            return new ResponseEntity<>(user, HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/deleteUser/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable String id){
+        try {
+            userService.deleteUser(id);
+            return new ResponseEntity<>("Usuario eliminado", HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>("Usuario no encontrado", HttpStatus.NOT_FOUND);
+        }
+    }
 }

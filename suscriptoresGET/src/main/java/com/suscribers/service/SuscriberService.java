@@ -12,4 +12,6 @@ public interface SuscriberService {
     List<SuscriberDto> getSuscribers();
 
     List<SuscriberDto> getActiveSuscribers();
+
+    List<SuscriberDto> getByPark(String type);
 }

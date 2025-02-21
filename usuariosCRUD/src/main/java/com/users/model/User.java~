@@ -4,7 +4,6 @@ package com.users.model;
 import com.users.dto.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -14,7 +13,6 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Data
 @Table(name = "users")
 public class User {
 
@@ -43,6 +41,4 @@ public class User {
                 .email(email)
                 .build();
     }
-
-
 }

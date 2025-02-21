@@ -67,8 +67,6 @@ public class UserServiceImpl implements UserService {
         UserKey userKey = new UserKeyMapper().dtoToEntity(user);
         UserValue userValue = new UserValueMapper().dtoToEntity(user);
         kafkaTemplate.send(userTopic, userKey, userValue);
-
-        usuariosRepository.save(nuevo);
     }
 
     @Override

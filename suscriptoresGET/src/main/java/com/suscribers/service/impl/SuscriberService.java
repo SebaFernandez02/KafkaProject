@@ -11,6 +11,7 @@ import javax.ws.rs.NotFoundException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -64,6 +65,19 @@ public class SuscriberService implements com.suscribers.service.SuscriberService
         List<SuscriberDto> suscribers = mongoRepository.findAll()
                 .stream()
                 .filter(x -> x.getDate().getDayOfYear() == (LocalDateTime.now().getDayOfYear()))
+                .map(Suscriber::toDto)
+                .collect(Collectors.toList());
+
+        suscribers.forEach(x -> x.setSuscriptions(new ArrayList<>(x.getSuscriptions().stream().filter(y -> LocalDateTime.parse(y.getDate()).getDayOfYear() == LocalDateTime.now().getDayOfYear()).collect(Collectors.toList()))));
+        return suscribers;
+    }
+
+    @Override
+    public List<SuscriberDto> getByPark(String type) {
+        List<SuscriberDto> suscribers = mongoRepository.findAll()
+                .stream()
+                .filter(x -> x.getSuscriptions().stream().anyMatch(y -> y.getType().equals(type.toUpperCase(Locale.ROOT))
+                        && LocalDateTime.parse(y.getDate()).getDayOfYear() == LocalDateTime.now().getDayOfYear()))
                 .map(Suscriber::toDto)
                 .collect(Collectors.toList());
 
