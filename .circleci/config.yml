@@ -1,0 +1,49 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:11  # Imagen con Java y Maven
+    steps:
+      - checkout  # Clona el código desde GitHub automáticamente
+      - run:
+          name: Instalar Docker y Docker Compose
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y docker.io docker-compose
+      - run:
+          name: Compilar el proyecto con Maven
+          command: mvn clean install
+
+  start_containers:
+    docker:
+      - image: circleci/python:3.8  # Imagen con Python
+    steps:
+      - checkout  # Clona el código
+      - run:
+          name: Levantar los contenedores con Docker Compose
+          command: docker-compose up --build -d
+
+  run_dashboard:
+    docker:
+      - image: circleci/python:3.8
+    steps:
+      - checkout
+      - run:
+          name: Instalar dependencias de Python
+          command: pip install -r dataPython/dashboard/requirements.txt
+      - run:
+          name: Ejecutar el dashboard.py
+          command: python3 dataPython/dashboard/dashboard.py
+
+workflows:
+  version: 2
+  build_and_run:
+    jobs:
+      - build
+      - start_containers:
+          requires:
+            - build
+      - run_dashboard:
+          requires:
+            - start_containers
