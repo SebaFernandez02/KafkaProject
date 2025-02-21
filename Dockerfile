@@ -1,6 +1,6 @@
-FROM jenkins/jenkins:lts
-# if we want to install via apt
-USER root
-RUN apt-get update && apt-get install -y maven
-# drop back to the regular jenkins user - good practice
-USER jenkins
+# Usar una imagen base con Maven y OpenJDK 11
+FROM maven:3.8.4-openjdk-11
+
+# Instalar Docker y Docker Compose
+RUN apt-get update && apt-get install -y docker.io docker-compose python3
+
