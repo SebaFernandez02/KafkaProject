@@ -2,10 +2,24 @@ pipeline {
     agent any
 
     environment {
-        DATA_PYTHON_PATH = "dataPython/dashboard"
+        MAVEN_HOME = '/opt/maven'
+        PATH = "${MAVEN_HOME}/bin:${env.PATH}"
     }
 
     stages {
+        stage('Preparar Maven') {
+            steps {
+                script {
+                    echo "Instalando Maven..."
+                    // Instalar Maven
+                    sh '''
+                        apt-get update -y
+                        apt-get install -y maven
+                    '''
+                }
+            }
+        }
+
         stage('Build Maven') {
             steps {
                 script {
@@ -28,7 +42,7 @@ pipeline {
             steps {
                 script {
                     echo "Ejecutando el archivo dashboard.py..."
-                    sh "python3 ${DATA_PYTHON_PATH}/dashboard.py"
+                    sh "python3 dataPython/dashboard/dashboard.py"
                 }
             }
         }
