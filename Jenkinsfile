@@ -1,5 +1,6 @@
 pipeline {
-    agent any
+    agent any  // Usar cualquier agente de Jenkins disponible
+
     environment {
         DATA_PYTHON_PATH = "dataPython/dashboard"
     }
@@ -9,7 +10,7 @@ pipeline {
             steps {
                 script {
                     echo "Compilando el proyecto con Maven..."
-                    sh 'mvn clean install'
+                    sh 'docker run --rm -v $(pwd):/usr/src/mymaven -w /usr/src/mymaven maven:3.8.4-openjdk-11 mvn clean install'
                 }
             }
         }
