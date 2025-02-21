@@ -1,25 +1,12 @@
 pipeline {
-    agent any
-
-    environment {
-        MAVEN_HOME = '/opt/maven'
-        PATH = "${MAVEN_HOME}/bin:${env.PATH}"
+    agent {
+        docker {
+            image 'maven:3.8.4-openjdk-11'  // Imagen con Maven y OpenJDK 11
+            args '-v /var/jenkins_home:/var/jenkins_home' // Opcionalmente puedes agregar volúmenes si es necesario
+        }
     }
 
     stages {
-        stage('Preparar Maven') {
-            steps {
-                script {
-                    echo "Instalando Maven..."
-                    // Instalar Maven
-                    sh '''
-                        apt-get update -y
-                        apt-get install -y maven
-                    '''
-                }
-            }
-        }
-
         stage('Build Maven') {
             steps {
                 script {
