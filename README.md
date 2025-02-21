@@ -52,3 +52,4 @@ NOTA2: El reporte se encuentra en la carpeta output del proyecto y se actualiza 
 **KAFKA, MONGO, DOCKER, SPRINGBOOT, PYTHON, POSTGRESQL, JPA, MICROSERVICES**
 
 Link al repo: https://gitlabdes.hiberus.com/safernandez/kafkaproject
+
