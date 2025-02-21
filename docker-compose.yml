@@ -10,13 +10,13 @@ services:
             - "8080:8080"
         environment:
             KAFKA_BROKERS: kafka:29092
-            KAFKA_TLS_INSECURESKIPTLSVERIFY: true
-            KAFKA_SCHEMAREGISTRY_ENABLED: true
+            KAFKA_TLS_INSECURESKIPTLSVERIFY: "true"
+            KAFKA_SCHEMAREGISTRY_ENABLED: "true"
             KAFKA_SCHEMAREGISTRY_URLS: http://schema-registry:8081
             KAFKA_SCHEMAREGISTRY_USERNAME: client
             KAFKA_SCHEMAREGISTRY_PASSWORD: client
-            KAFKA_SCHEMAREGISTRY_TLS_ENABLED: false
-            KAFKA_SCHEMAREGISTRY_TLS_INSECURESKIPTLSVERIFY: true
+            KAFKA_SCHEMAREGISTRY_TLS_ENABLED: "false"
+            KAFKA_SCHEMAREGISTRY_TLS_INSECURESKIPTLSVERIFY: "true"
         depends_on:
             - kafka
             - schema-registry
