@@ -1,28 +1,34 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'maven:3.8.4-openjdk-11'  // Imagen con Maven y OpenJDK 11
+            args '-v /var/run/docker.sock:/var/run/docker.sock'  // Monta el socket de Docker
+        }
+    }
 
     environment {
-        MAVEN_HOME = 'C:/Program Files/apache-maven-3.8.8' // Ajusta esta ruta si tu Maven está en una ubicación diferente
-        DOCKER_HOME = '/usr/local/bin/docker' // Ajusta la ruta de Docker si es necesario
+        PATH = "/usr/local/bin:$PATH"  // Asegura que los binarios de Docker estén en el PATH
     }
 
     stages {
-        stage('Build with Maven') {
+        stage('Build Maven') {
             steps {
                 script {
-                    echo 'Ejecutando mvn clean install...'
-                    // Ejecuta el comando mvn clean install en la carpeta raíz del proyecto
+                    echo "Compilando el proyecto con Maven..."
                     sh 'mvn clean install'
                 }
             }
         }
 
-        stage('Levantar Contenedores Docker') {
+        stage('Levantar Contenedores') {
             steps {
                 script {
-                    echo 'Levantando los contenedores con Docker Compose...'
-                    // Ejecuta el comando docker-compose up --build en el directorio donde se encuentra el archivo docker-compose.yml
-                    sh 'docker-compose up --build -d'
+                    echo "Levantando los contenedores con Docker Compose..."
+                    sh '''
+                        # Instalar Docker y Docker Compose si no están instalados
+                        apt-get update && apt-get install -y docker.io docker-compose
+                        docker-compose up --build -d
+                    '''
                 }
             }
         }
@@ -30,9 +36,8 @@ pipeline {
         stage('Ejecutar Dashboard Python') {
             steps {
                 script {
-                    echo 'Ejecutando el archivo dashboard.py...'
-                    // Ejecuta el archivo dashboard.py en la ubicación /dataPython/dashboard
-                    sh 'python3 /dataPython/dashboard/dashboard.py'
+                    echo "Ejecutando el archivo dashboard.py..."
+                    sh 'python3 dataPython/dashboard/dashboard.py'
                 }
             }
         }
@@ -40,13 +45,10 @@ pipeline {
 
     post {
         always {
-            echo 'Pipeline terminada.'
-        }
-        success {
-            echo 'Pipeline ejecutada con éxito.'
+            echo "Pipeline terminado"
         }
         failure {
-            echo 'Algo salió mal en la ejecución de la pipeline.'
+            echo "Algo salió mal en el pipeline"
         }
     }
 }
