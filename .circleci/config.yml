@@ -21,13 +21,16 @@ jobs:
           paths:
             - ~/.m2
           key: maven-cache-{{ checksum "pom.xml" }}
-      - store_artifacts:
-          path: target
-          destination: jar-files
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - target
   deploy:
     docker:
       - image: docker:latest
     steps:
+      - attach_workspace:
+          at: ~/project
       - checkout
       - setup_remote_docker
       - run:
