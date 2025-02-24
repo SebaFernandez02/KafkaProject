@@ -2,22 +2,24 @@ version: 2.1
 
 jobs:
   build:
-    docker:
-      - image: circleci/openjdk:11  # Imagen con Java y Maven
+    machine:
+      image: ubuntu-2204:current
     steps:
-      - checkout  # Clona el código desde GitHub automáticamente
+      - checkout
       - run:
-          name: Instalar Docker y Docker Compose
-          command: |
-            sudo apt-get update
-            sudo apt-get install -y docker.io docker-compose
+          name: Instalar Maven
+          command: sudo apt update && sudo apt install -y maven
       - run:
-          name: Compilar el proyecto con Maven
-          command: mvn clean install
+          name: Compilar el proyecto
+          command: mvn clean package  # Compila y genera el JAR en `target/`
+      - run:
+          name: Verificar archivos en `target/`
+          command: ls -l target/
+      - run:
+          name: Construir y levantar contenedores
+          command: docker-compose up --build -d
 
   start_containers:
-    machine:  # Usa una máquina en lugar de un contenedor
-      image: ubuntu-2204:current  # Imagen con Docker preinstalado
     steps:
       - checkout  # Clona el código
       - run:
