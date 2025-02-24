@@ -20,8 +20,10 @@ jobs:
           command: docker-compose up --build -d
 
   start_containers:
+    machine:
+      image: ubuntu-2204:current  # Define el entorno de ejecución
     steps:
-      - checkout  # Clona el código
+      - checkout
       - run:
           name: Verificar versión de Docker
           command: docker --version
