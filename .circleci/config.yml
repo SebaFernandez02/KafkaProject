@@ -16,10 +16,13 @@ jobs:
           command: mvn clean install
 
   start_containers:
-    docker:
-      - image: circleci/python:3.8  # Imagen con Python
+    machine:  # Usa una máquina en lugar de un contenedor
+      image: ubuntu-2204:current  # Imagen con Docker preinstalado
     steps:
       - checkout  # Clona el código
+      - run:
+          name: Verificar versión de Docker
+          command: docker --version
       - run:
           name: Levantar los contenedores con Docker Compose
           command: docker-compose up --build -d
