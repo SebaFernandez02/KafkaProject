@@ -1,43 +1,52 @@
-# This config was automatically generated from your source code
-# Stacks detected: cicd:jenkins:.,deps:java:.
 version: 2.1
+
 jobs:
-  test-java:
+  build:
     docker:
-      - image: cimg/openjdk:17.0
+      - image: circleci/openjdk:11  # Imagen con Java y Maven
+    steps:
+      - checkout  # Clona el código desde GitHub automáticamente
+      - run:
+          name: Instalar Docker y Docker Compose
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y docker.io docker-compose
+      - run:
+          name: Compilar el proyecto con Maven
+          command: mvn clean package
+
+  start_containers:
+    machine:  # Usa una máquina en lugar de un contenedor
+      image: ubuntu-2204:current  # Imagen con Docker preinstalado
+    steps:
+      - checkout  # Clona el código
+      - run:
+          name: Verificar versión de Docker
+          command: docker --version
+      - run:
+          name: Levantar los contenedores con Docker Compose
+          command: docker-compose up --build -d
+
+  run_dashboard:
+    docker:
+      - image: circleci/python:3.8
     steps:
       - checkout
       - run:
-          name: Calculate cache key
-          command: |-
-            find . -name 'pom.xml' -o -name 'gradlew*' -o -name '*.gradle*' | \
-                    sort | xargs cat > /tmp/CIRCLECI_CACHE_KEY
-      - restore_cache:
-          key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
+          name: Instalar dependencias de Python
+          command: pip install -r dataPython/dashboard/requirements.txt
       - run:
-          command: mvn verify
-      - store_test_results:
-          path: target/surefire-reports
-      - save_cache:
-          key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
-          paths:
-            - ~/.m2/repository
-  deploy:
-    # This is an example deploy job, not actually used by the workflow
-    docker:
-      - image: cimg/base:stable
-    steps:
-      # Replace this with steps to deploy to users
-      - run:
-          name: deploy
-          command: '#e.g. ./deploy.sh'
-      - run:
-          name: found jenkins config
-          command: ':'
+          name: Ejecutar el dashboard.py
+          command: python3 dataPython/dashboard/dashboard.py
+
 workflows:
-  build-and-test:
+  version: 2
+  build_and_run:
     jobs:
-      - test-java
-    # - deploy:
-    #     requires:
-    #       - test-java
+      - build
+      - start_containers:
+          requires:
+            - build
+      - run_dashboard:
+          requires:
+            - start_containers
