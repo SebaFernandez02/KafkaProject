@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.ws.rs.NotFoundException;
+import java.security.InvalidParameterException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,18 +30,33 @@ public class SuscriberService implements com.suscribers.service.SuscriberService
     @Override
     @Transactional
     public void saveSuscriber(SuscriberDto dto) {
+        try {
+            if (dto == null) {
+                log.error("El DTO recibido es nulo");
+                throw new InvalidParameterException("El DTO no puede ser nulo");
+            }
 
-        Suscriber suscriber = Suscriber.builder()
-                .id(UUID.fromString(dto.getId()))
-                .username(dto.getUsername())
-                .email(dto.getEmail())
-                .suscriptions(dto.getSuscriptions())
-                .date(dto.getDate())
-                .build();
+            if (dto.getId() == null || dto.getUsername() == null || dto.getEmail() == null) {
+                log.error("Faltan datos en el DTO: " + dto);
+                throw new InvalidParameterException("Datos incompletos para el suscriptor");
+            }
 
-        log.info("[ServiceSuscriber] Guardando suscriptor en BBDD");
-        mongoRepository.save(suscriber);
-        log.info("Suscriptor guardado en BBDD");
+            Suscriber suscriber = Suscriber.builder()
+                    .id(UUID.fromString(dto.getId()))
+                    .username(dto.getUsername())
+                    .email(dto.getEmail())
+                    .suscriptions(dto.getSuscriptions())
+                    .date(dto.getDate())
+                    .build();
+
+            log.info("[ServiceSuscriber] Guardando suscriptor en BBDD");
+            mongoRepository.save(suscriber);
+            log.info("Suscriptor guardado en BBDD");
+
+        } catch (Exception e) {
+            log.error("Error al guardar el suscriptor", e);
+            throw new InvalidParameterException("Error al guardar el suscriptor");
+        }
     }
 
     @Override

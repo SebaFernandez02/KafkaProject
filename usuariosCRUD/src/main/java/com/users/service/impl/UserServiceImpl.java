@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.security.InvalidParameterException;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
 @Service
@@ -84,10 +85,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto getUserByEmail(String email) {
-        return usuariosRepository.findByEmail(email).toDto();
+        try {
+            return usuariosRepository.findByEmail(email).toDto();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
-    private boolean ensureUserNotExists(String email){
+    private boolean ensureUserNotExists(String email) {
         return usuariosRepository.findByEmail(email) == null;
     }
+
 }

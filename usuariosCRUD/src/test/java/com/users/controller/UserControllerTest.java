@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 class UserControllerTest {
-/*
+
     @Mock
     private UserService userService;
 
@@ -31,10 +31,8 @@ class UserControllerTest {
     @Test
     void createUserSuccess() {
         // Arrange
-        UserDto userDto = new UserDto();
-        userDto.setId(UUID.randomUUID());
-        userDto.setUsername("test_user");
-        userDto.setEmail("test_user@example.com");
+        UserDto userDto = UserDto.builder().id(UUID.randomUUID().toString()).username("testuser").email("testuser@example.com").build();
+
 
         doNothing().when(userService).createUser(userDto);
 
@@ -50,9 +48,8 @@ class UserControllerTest {
     @Test
     void createUserBadRequest() {
         // Arrange
-        UserDto userDto = new UserDto(); // Usuario incompleto para provocar un error
-        userDto.setUsername("");
-        userDto.setEmail("");
+        UserDto userDto = UserDto.builder().id(UUID.randomUUID().toString()).username("testuser").email("testuser@example.com").build();
+
 
         doThrow(new IllegalArgumentException("Usuario inválido")).when(userService).createUser(userDto);
 
@@ -63,5 +60,5 @@ class UserControllerTest {
         assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode(), "El código de estado debería ser 400 (BAD_REQUEST).");
         assertEquals(userDto, response.getBody(), "El cuerpo de la respuesta debería contener el usuario enviado.");
         verify(userService, times(1)).createUser(userDto);
-    }*/
+    }
 }
