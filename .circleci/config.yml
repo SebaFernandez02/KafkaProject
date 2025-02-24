@@ -28,14 +28,6 @@ jobs:
       - run:
           name: Build and Run with Docker Compose
           command: docker-compose up --build -d
-      - run:
-          name: Instalar dependencias de Python
-          command: |
-            pip install --upgrade pip
-            pip install -r dataPython/dashboard/requirements.txt
-      - run:
-          name: Run Dashboard
-          command: python3 dataPython/dashboard/dashboard.py
 workflows:
   version: 2
   build_and_deploy:
