@@ -1,52 +1,46 @@
 version: 2.1
-
+executors:
+  java-executor:
+    docker:
+      - image: cimg/openjdk:11.0
+    working_directory: ~/project
 jobs:
   build:
-    docker:
-      - image: circleci/openjdk:11  # Imagen con Java y Maven
-    steps:
-      - checkout  # Clona el código desde GitHub automáticamente
-      - run:
-          name: Instalar Docker y Docker Compose
-          command: |
-            sudo apt-get update
-            sudo apt-get install -y docker.io docker-compose
-      - run:
-          name: Compilar el proyecto con Maven
-          command: mvn clean package
-
-  start_containers:
-    machine:  # Usa una máquina en lugar de un contenedor
-      image: ubuntu-2204:current  # Imagen con Docker preinstalado
-    steps:
-      - checkout  # Clona el código
-      - run:
-          name: Verificar versión de Docker
-          command: docker --version
-      - run:
-          name: Levantar los contenedores con Docker Compose
-          command: docker-compose up --build -d
-
-  run_dashboard:
-    docker:
-      - image: circleci/python:3.8
+    executor: java-executor
     steps:
       - checkout
+      - setup_remote_docker
+      - restore_cache:
+          keys:
+            - maven-cache-{{ checksum "pom.xml" }}
+            - maven-cache-
       - run:
-          name: Instalar dependencias de Python
-          command: pip install -r dataPython/dashboard/requirements.txt
+          name: Build with Maven
+          command: mvn clean package
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: maven-cache-{{ checksum "pom.xml" }}
+      - store_artifacts:
+          path: target
+          destination: jar-files
+  deploy:
+    docker:
+      - image: docker:latest
+    steps:
+      - checkout
+      - setup_remote_docker
       - run:
-          name: Ejecutar el dashboard.py
-          command: python3 dataPython/dashboard/dashboard.py
-
+          name: Build and Run with Docker Compose
+          command: docker-compose up --build -d
+      - run:
+          name: Run Dashboard
+          command: ./run_dashboard.sh
 workflows:
   version: 2
-  build_and_run:
+  build_and_deploy:
     jobs:
       - build
-      - start_containers:
+      - deploy:
           requires:
             - build
-      - run_dashboard:
-          requires:
-            - start_containers
