@@ -7,12 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Instalar certificados y Java correctamente
-          command: |
-            apt-get update
-            apt-get install -y ca-certificates-java
-            update-ca-certificates
-      - run:
           name: Instalar Maven
           command: sudo apt update && sudo apt install -y maven
       - run:
