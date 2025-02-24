@@ -4,6 +4,7 @@ executors:
     docker:
       - image: cimg/openjdk:11.0
       - image: docker:latest
+      - image: circleci/python:3.8
     working_directory: ~/project
 jobs:
   build:
@@ -30,7 +31,7 @@ jobs:
           command: docker-compose up --build -d
       - run:
           name: Run Dashboard
-          command: ./run_dashboard.sh
+          command: python3 dataPython/dashboard/dashboard.py
 workflows:
   version: 2
   build_and_deploy:
