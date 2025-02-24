@@ -6,12 +6,12 @@ jobs:
       image: ubuntu-2204:current
     steps:
       - checkout
-      - - run:
-            name: Instalar Java 11
-            command: sudo apt update && sudo apt install -y openjdk-11-jdk
-        - run:
-            name: Verificar versión de Java después del cambio
-            command: java -version
+      - run:
+          name: Instalar Java 11
+          command: sudo apt update && sudo apt install -y openjdk-11-jdk
+      - run:
+          name: Verificar versión de Java después del cambio
+          command: java -version
       - run:
           name: Instalar Maven
           command: sudo apt update && sudo apt install -y maven
