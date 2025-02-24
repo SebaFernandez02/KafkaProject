@@ -1,57 +1,38 @@
 version: 2.1
-
+executors:
+  java-executor:
+    docker:
+      - image: cimg/openjdk:11.0
+      - image: docker:latest
+    working_directory: ~/project
 jobs:
   build:
-    docker:
-      - image: circleci/openjdk:11  # Usa una imagen oficial de CircleCI con Java 11
+    executor: java-executor
     steps:
       - checkout
+      - setup_remote_docker
+      - restore_cache:
+          keys:
+            - maven-cache-{{ checksum "pom.xml" }}
+            - maven-cache-
       - run:
-          name: Instalar Maven
-          command: sudo apt update && sudo apt install -y maven
-      - run:
-          name: Verificar versión de Java y Maven
-          command: java -version && mvn -version
-      - run:
-          name: Compilar el proyecto
+          name: Build with Maven
           command: mvn clean package
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: maven-cache-{{ checksum "pom.xml" }}
+      - store_artifacts:
+          path: target
+          destination: jar-files
       - run:
-          name: Verificar archivos en `target/`
-          command: ls -l target/
-
-  start_containers:
-    machine: true  # Usa una máquina virtual con Docker preinstalado
-    steps:
-      - checkout
-      - run:
-          name: Verificar versión de Docker y Docker Compose
-          command: docker --version && docker-compose --version
-      - run:
-          name: Levantar los contenedores con Docker Compose
+          name: Build and Run with Docker Compose
           command: docker-compose up --build -d
-
-  run_dashboard:
-    docker:
-      - image: circleci/python:3.8
-    steps:
-      - checkout
       - run:
-          name: Instalar dependencias de Python
-          command: |
-            pip install --upgrade pip
-            pip install -r dataPython/dashboard/requirements.txt
-      - run:
-          name: Ejecutar el dashboard.py
-          command: python3 dataPython/dashboard/dashboard.py
-
+          name: Run Dashboard
+          command: ./run_dashboard.sh
 workflows:
   version: 2
-  build_and_run:
+  build_and_deploy:
     jobs:
       - build
-      - start_containers:
-          requires:
-            - build
-      - run_dashboard:
-          requires:
-            - start_containers
