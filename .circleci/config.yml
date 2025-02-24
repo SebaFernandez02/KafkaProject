@@ -3,6 +3,7 @@ executors:
   java-executor:
     docker:
       - image: cimg/openjdk:11.0
+      - image: docker:latest
     working_directory: ~/project
 jobs:
   build:
@@ -21,18 +22,9 @@ jobs:
           paths:
             - ~/.m2
           key: maven-cache-{{ checksum "pom.xml" }}
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - target
-  deploy:
-    docker:
-      - image: docker:latest
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - checkout
-      - setup_remote_docker
+      - store_artifacts:
+          path: target
+          destination: jar-files
       - run:
           name: Build and Run with Docker Compose
           command: docker-compose up --build -d
@@ -44,6 +36,3 @@ workflows:
   build_and_deploy:
     jobs:
       - build
-      - deploy:
-          requires:
-            - build
