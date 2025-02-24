@@ -3,7 +3,6 @@ executors:
   java-executor:
     docker:
       - image: cimg/openjdk:11.0
-      - image: docker:latest
       - image: circleci/python:3.8
     working_directory: ~/project
 jobs:
@@ -29,6 +28,11 @@ jobs:
       - run:
           name: Build and Run with Docker Compose
           command: docker-compose up --build -d
+      - run:
+          name: Instalar dependencias de Python
+          command: |
+            pip install --upgrade pip
+            pip install -r dataPython/dashboard/requirements.txt
       - run:
           name: Run Dashboard
           command: python3 dataPython/dashboard/dashboard.py
