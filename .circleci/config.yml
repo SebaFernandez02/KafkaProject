@@ -2,22 +2,19 @@ version: 2.1
 
 jobs:
   build:
-    machine:
-      image: ubuntu-2204:current
+    docker:
+      - image: cimg/openjdk:11.0  # Usa una imagen de Docker con Java 11 preinstalado
     steps:
       - checkout
       - run:
-          name: Instalar Java 11
-          command: sudo apt update && sudo apt install -y openjdk-11-jdk
-      - run:
-          name: Verificar versión de Java después del cambio
+          name: Verificar versión de Java
           command: java -version
       - run:
           name: Instalar Maven
           command: sudo apt update && sudo apt install -y maven
       - run:
           name: Compilar el proyecto
-          command: mvn clean package  # Compila y genera el JAR en `target/`
+          command: mvn clean package
       - run:
           name: Verificar archivos en `target/`
           command: ls -l target/
@@ -26,10 +23,13 @@ jobs:
           command: docker-compose up --build -d
 
   start_containers:
-    machine:
-      image: ubuntu-2204:current  # Define el entorno de ejecución
+    docker:
+      - image: docker:20.10.23  # Usa una imagen de Docker compatible con `docker-compose`
     steps:
       - checkout
+      - run:
+          name: Instalar Docker Compose
+          command: apk add --no-cache docker-compose
       - run:
           name: Verificar versión de Docker
           command: docker --version

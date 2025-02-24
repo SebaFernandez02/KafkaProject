@@ -16,16 +16,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="agregadorSuscripciones" target="11" />
       <module name="gestion-academia" target="11" />
-      <module name="MixbiUsuarioSuscripcion" target="11" />
-      <module name="PCSsuscripciones" target="11" />
-      <module name="PCSsuscriptores" target="11" />
       <module name="PCSsuscriptores (1)" target="11" />
       <module name="PCSsuscriptores (2)" target="11" />
-      <module name="suscripcionesCRUD" target="11" />
-      <module name="suscriptoresGET" target="11" />
-      <module name="usuariosCRUD" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -36,6 +29,7 @@
       <module name="PCSsuscriptores (1)" options="-parameters" />
       <module name="PCSsuscriptores (2)" options="-parameters" />
       <module name="agregadorSuscripciones" options="-parameters" />
+      <module name="parque-kafka" options="-parameters" />
       <module name="suscripcionesCRUD" options="-parameters" />
       <module name="suscriptoresGET" options="-parameters" />
       <module name="usuariosCRUD" options="-parameters" />
