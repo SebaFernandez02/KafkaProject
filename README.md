@@ -53,3 +53,4 @@ NOTA2: El reporte se encuentra en la carpeta output del proyecto y se actualiza 
 
 Link al repo: https://gitlabdes.hiberus.com/safernandez/kafkaproject
 
+
